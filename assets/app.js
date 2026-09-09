@@ -9,7 +9,7 @@ const japanese = [
  ['#backBtn','戻る'],['#nextBtn','次へ'],['#restartBtn','もう一度診断する'],
  ['.results-head .eyebrow','今の気分に合うアニメ'],['.results-head h2','今夜は、この作品を。'],
  ['.method strong','AniMoodのおすすめの仕組み'],
- ['.method p','感情の重さ、伏線回収、謎、テンポ、雰囲気など、人の手で設定した特徴をもとにおすすめしています。表示される％は好みとの相性を示す目安で、作品の評価点ではありません。'],
+ ['.method p','感情の重さ、伏線回収、謎、テンポ、雰囲気など、人の手で設定した特徴をもとにおすすめしています。正式承認されたデータを使い、未設定の項目は採点から外しています。'],
  ['.why .eyebrow','ANIMOODについて'],['.why h2','ジャンルの、その先へ。'],
  ['.why article:nth-child(1) h3','気分から選ぶ'],['.why article:nth-child(1) p','頭を使いたい夜も、ただ笑いたい夜も。今の気分から作品を探せます。'],
  ['.why article:nth-child(2) h3','観たときの体験を大切に'],['.why article:nth-child(2) p','伏線がつながる快感、心に残る余韻、緊張感、続きが気になる感覚まで。ジャンルだけでは伝わらない魅力を重視します。'],
@@ -32,6 +32,7 @@ document.querySelectorAll('[data-language]').forEach(button => button.onclick = 
  language = button.dataset.language;
  try { localStorage.setItem('animood-language', language); } catch {}
  applyLanguage();
+ updateDataNotice();
 });
 
 
@@ -42,7 +43,7 @@ const questions = [
   ]},
   {key:"story", title:"What matters most in the story?", help:"Choose up to two.", max:2, answers:[
     ["foreshadow","Foreshadowing & payoff","伏線回収"],["world","Worldbuilding","世界観・設定"],["characters","Characters","キャラクター"],
-    ["mystery","Mystery","謎・考察"],["action","Action","戦い・アクション"]
+    ["mystery","Mystery","謎・考察"],["action","Action","戦い・アクション"],["ambiguity","Open-ended interpretation","答えを残して考察したい"]
   ]},
   {key:"pace", title:"How should it move?", help:"Choose one.", max:1, answers:[
     ["slow","Slow burn","じっくり"],["balanced","Balanced","普通"],["fast","Fast","テンポ重視"]
@@ -70,7 +71,28 @@ const back=document.getElementById("backBtn");
 const restart=document.getElementById("restartBtn");
 const bar=document.getElementById("progressBar");
 
-fetch("data/anime.json").then(r=>r.json()).then(d=>anime=d);
+let loadState = 'loading';
+const dataNotice = document.createElement('p');
+dataNotice.className = 'data-notice';
+dataNotice.setAttribute('role','status');
+startBtn.after(dataNotice);
+function updateDataNotice(){
+ startBtn.disabled = loadState === 'loading';
+ dataNotice.textContent = loadState === 'loading' ? localText('Loading recommendations…','作品データを読み込み中…') : loadState === 'error' ? localText('Could not load recommendations. Select the button to retry.','読み込めませんでした。ボタンを押すと再試行します。') : anime.length ? '' : localText('Our first recommendations are being prepared. Please check back soon.','公開できる作品を準備中です。しばらくしてからお試しください。');
+}
+async function loadAnime(){
+ loadState = 'loading'; updateDataNotice();
+ try {
+  const response = await fetch('data/anime.json');
+  if (!response.ok) throw new Error('load');
+  const records = await response.json();
+  if (!Array.isArray(records)) throw new Error('schema');
+  anime = records.filter(a=>a.evaluationStatus==='評価済み' && a.publicReady===true);
+  loadState = 'ready';
+ } catch { loadState = 'error'; }
+ updateDataNotice();
+}
+function escapeHTML(value){return String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 
 function renderQuestion(){
   const q=questions[step];
@@ -98,36 +120,26 @@ function canAdvance(){
   return q.optional || selections[q.key].length>0;
 }
 
-function scoreAnime(a){
-  let total=0, possible=0;
-  for(const group of ["mood","story","pace","darkness"]){
-    for(const v of selections[group]){
-      total += a.traits[v]||0;
-      possible += 5;
-    }
-  }
-  let penalty=0;
-  for(const f of selections.dealbreaker) if(a.flags.includes(f)) penalty += 5;
-  const raw=Math.max(0,total-penalty);
-  return {raw,pct:possible?Math.max(1,Math.min(99,Math.round(raw/possible*100))):0};
-}
-
 function showResults(scroll = true){
-  const ranked=anime.map(a=>({...a,match:scoreAnime(a)})).sort((a,b)=>b.match.raw-a.match.raw).slice(0,3);
+  const ranked=AniMoodEngine.rank(anime,selections);
   document.getElementById("resultsGrid").innerHTML=ranked.map((a,i)=>`
     <article class="card">
       <div class="rank">${localText(`#${i+1} MATCH`, `おすすめ ${i+1} · 相性`)}</div>
-      <h3>${localText(a.title,a.ja.title)}</h3>
-      <div class="score">${a.match.pct}%</div>
-      <div class="reason">${localText(a.reason,a.ja.reason)}</div>
-      <div class="tags">${(language === "ja" ? a.ja.tags : a.tags).map(t=>`<span class="tag">${t}</span>`).join("")}</div>
-    </article>`).join("");
+      <h3>${escapeHTML(localText(a.title,a.ja.title))}</h3>
+      ${a.match.incomplete ? `<p class="match-note">${localText('Some preferences could not be checked.','一部の希望は未設定のため照合できていません。')}</p>` : ''}
+      ${a.match.contentUnknown ? `<p class="match-note">${localText('Content information is incomplete. Check content guidance before watching.','苦手な描写の情報が不足しています。視聴前に内容をご確認ください。')}</p>` : ''}
+      <div class="reason">${escapeHTML(localText(a.reason,a.ja.reason))}</div>
+      <div class="tags">${(language === "ja" ? a.ja.tags : a.tags).map(t=>`<span class="tag">${escapeHTML(t)}</span>`).join("")}</div>
+    </article>`).join("") || `<p class="empty-result">${localText('No matches for these preferences yet. Try changing your answers.','今の条件に合う作品はまだありません。回答を変えてお試しください。')}</p>`;
   quiz.classList.add("hidden");
   results.classList.remove("hidden");
   if (scroll) window.scrollTo({top:results.offsetTop-20,behavior:"smooth"});
 }
 
 startBtn.onclick=()=>{
+  if(loadState==='error'){loadAnime();return;}
+  if(loadState!=='ready'||!anime.length)return;
+  results.classList.add('hidden');
   quiz.classList.remove("hidden");
   renderQuestion();
   window.scrollTo({top:quiz.offsetTop-20,behavior:"smooth"});
@@ -144,3 +156,4 @@ restart.onclick=()=>{
 };
 
 applyLanguage();
+loadAnime();
