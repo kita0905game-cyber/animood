@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "moods": {
+    "mind_bending": {"label_ja":"頭を使いたい","positive":{"Mystery":3,"Psychological":3,"Mind Games":3,"Plot Twists":3,"Foreshadowing / Payoff":3,"Time Travel":2,"Time Loop":2,"Sci-Fi":1},"negative":{"Cozy / Healing":-1}},
+    "dark": {"label_ja":"ダークなものが観たい","positive":{"Dark Fantasy":3,"Horror":3,"Gore":2,"Crime":2,"Underworld":2,"Dystopia":2,"Post-Apocalyptic":2,"Morally Gray":2,"War":1},"negative":{"Cozy / Healing":-2}},
+    "emotional": {"label_ja":"感情を揺さぶられたい","positive":{"Emotional":3,"Drama":2,"Tragedy":2,"Character Growth":2,"Found Family":1,"War":1},"negative":{}},
+    "cozy": {"label_ja":"癒されたい","positive":{"Cozy / Healing":4,"Slice of Life":3,"Episodic":2,"Food":2,"Comedy":1},"negative":{"Gore":-4,"Horror":-3,"Tragedy":-2}},
+    "hype": {"label_ja":"テンション上げたい","positive":{"Action":3,"Fast Paced":3,"Gun Action":2,"Martial Arts":2,"Sports":2,"Adventure":1},"negative":{"Slow Burn":-2}},
+    "funny": {"label_ja":"笑いたい","positive":{"Comedy":4,"Parody":3,"Rom-Com":2,"Slice of Life":1},"negative":{"Tragedy":-2}},
+    "atmospheric": {"label_ja":"雰囲気に浸りたい","positive":{"Atmospheric":4,"Worldbuilding Heavy":2,"Slow Burn":2,"Supernatural":1,"Historical":1},"negative":{}}
+  },
+  "taste_dimensions": {
+    "plot_payoff": {"label_ja":"伏線・回収","tags":{"Foreshadowing / Payoff":4,"Plot Twists":3,"Mystery":2,"Time Travel":1,"Time Loop":1}},
+    "worldbuilding": {"label_ja":"世界観","tags":{"Worldbuilding Heavy":4,"Fantasy":1,"Sci-Fi":1,"Isekai":1,"Post-Apocalyptic":1,"Politics":1}},
+    "mystery": {"label_ja":"謎・考察","tags":{"Mystery":4,"Psychological":2,"Mind Games":2,"Detective":2,"Plot Twists":2}},
+    "action": {"label_ja":"アクション","tags":{"Action":4,"Gun Action":3,"Martial Arts":3,"War":2,"Military":1}},
+    "emotion": {"label_ja":"感情","tags":{"Emotional":4,"Drama":2,"Tragedy":2,"Character Growth":2}},
+    "comedy": {"label_ja":"笑い","tags":{"Comedy":4,"Parody":3,"Rom-Com":2}},
+    "romance": {"label_ja":"恋愛","tags":{"Romance":4,"Rom-Com":3,"Love Triangle":2}},
+    "darkness": {"label_ja":"ダークさ","tags":{"Dark Fantasy":3,"Horror":3,"Gore":2,"Crime":2,"Underworld":2,"Morally Gray":2}},
+    "comfort": {"label_ja":"癒し","tags":{"Cozy / Healing":4,"Slice of Life":3,"Food":2,"Episodic":1}}
+  },
+  "hard_filters": {
+    "no_gore": ["Gore"],
+    "no_heavy_cgi": ["Heavy CGI"],
+    "finished_only": ["Unfinished Story"],
+    "low_romance": ["Romance","Rom-Com","Love Triangle"]
+  },
+  "notes": [
+    "General Tags are evidence-backed categorical features, not user ratings.",
+    "Editor's Take must never be generated for titles without a completed internal evaluation.",
+    "Community score must not override hard filters or clear mood mismatch.",
+    "Exact weights are tunable; keep tag mapping separate from UI copy."
+  ]
+}

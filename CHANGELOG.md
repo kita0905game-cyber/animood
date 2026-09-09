@@ -20,3 +20,9 @@ Airtable now has 10 evaluated/public records and 358 unevaluated records. The te
 AI-origin scores keep their provenance; missing intensity axes remain null.
 See OPERATIONS.md for the approval record, additional Airtable fields, export and rule checks.
 This is an explicit seed approval, not permission to auto-approve future records.
+
+## 2026-09-09 — Final handoff
+- 368-title tag catalog; prior ten formal approvals preserved.
+- Bilingual Mood/Taste/Like routes, actual tag explanations, local event hooks.
+- Two focused landing pages, idempotent private-field-safe export, gated daily workflow.
+- Remote workflow requires secret/manual verification; external analytics awaits configuration.

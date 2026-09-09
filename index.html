@@ -1,61 +1,13 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="AniMood helps you pick your next anime based on the mood and experience you want tonight.">
-  <title>AniMood — Find anime for your mood</title>
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-  <main class="shell">
-    <nav class="language-switch" aria-label="Language / 言語"><button type="button" data-language="en" lang="en">English</button><button type="button" data-language="ja" lang="ja">日本語</button></nav>
-    <header class="hero">
-      <div class="logo">AniMood</div>
-      <div class="eyebrow">MOOD-FIRST ANIME DISCOVERY</div>
-      <h1>Stop scrolling.<br>Find what fits tonight.</h1>
-      <p class="lead">Pick the experience you want. AniMood matches you with anime based on mood, payoff, pacing, atmosphere and deal-breakers — not just genre.</p>
-      <button class="cta" id="startBtn">Find my anime</button>
-      <div class="micro">No account. No endless watchlist. Just picks.</div>
-    </header>
-
-    <section class="panel hidden" id="quizPanel">
-      <div class="progress"><span id="progressBar"></span></div>
-      <div id="questionHost"></div>
-      <div class="quiz-nav">
-        <button class="ghost" id="backBtn">Back</button>
-        <button class="cta small" id="nextBtn">Next</button>
-      </div>
-    </section>
-
-    <section class="hidden" id="resultsPanel">
-      <div class="results-head">
-        <div>
-          <div class="eyebrow">YOUR MOOD MATCHES</div>
-          <h2>Watch one of these tonight.</h2>
-        </div>
-        <button class="ghost" id="restartBtn">Start over</button>
-      </div>
-      <div class="cards" id="resultsGrid"></div>
-      <div class="method">
-        <strong>How AniMood works</strong>
-        <p>Results are based on hand-tuned experience tags such as emotional weight, payoff, mystery, pace and atmosphere. We use approved records and leave unknown dimensions out of scoring.</p>
-      </div>
-    </section>
-
-    <section class="why">
-      <div class="eyebrow">WHY ANIMOOD</div>
-      <h2>Genre is only the beginning.</h2>
-      <div class="why-grid">
-        <article><span>01</span><h3>Mood first</h3><p>Sometimes you want a mind-bender. Sometimes you just want to laugh.</p></article>
-        <article><span>02</span><h3>Human signals</h3><p>We care about things databases usually miss: payoff, emotional weight, tension and “how hard it is to stop watching.”</p></article>
-        <article><span>03</span><h3>Less choice</h3><p>AniMood is designed to narrow things down, not give you another list of 100 anime.</p></article>
-      </div>
-    </section>
-
-    <footer>Prototype v0.3 · AniMood</footer>
-  </main>
-  <script src="assets/engine.js"></script>
-  <script src="assets/app.js"></script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AniMood — What should I watch tonight?</title><meta name="description" content="Choose an anime by the mood and story experience you want. Explore a 368-title catalog with clear reasons and content notes."><link rel="canonical" href="https://animood.pages.dev/"><link rel="stylesheet" href="/assets/style.css"></head>
+<body><main><header class="nav"><a class="brand" href="/">AniMood<span>THE NEXT WATCH</span></a><nav class="languages" aria-label="Language"><button data-lang="en">EN</button><button data-lang="ja">日本語</button></nav></header>
+<section class="hero"><p class="eyebrow" data-i="eyebrow">A BETTER WAY TO PICK YOUR NEXT ANIME</p><h1 data-i="headline">A mood. A reason.<br>Your next watch.</h1><p class="sub" data-i="intro">Start with how you want to feel, or what you loved about a story. We’ll explain the fit.</p><p class="catalog" id="catalog" role="status">Loading the catalog…</p></section>
+<nav class="routes" aria-label="Discovery route"><button data-mode="mood" data-i="modeMood">Tonight’s mood</button><button data-mode="taste" data-i="modeTaste">My taste</button><button data-mode="like" data-i="modeLike">More like a favorite</button></nav>
+<section id="picker" class="picker" aria-label="Find your next anime"><div id="moodPanel"><p class="eyebrow" data-i="moodLabel">01 / CHOOSE UP TO TWO MOODS</p><div id="moods" class="chips"></div></div>
+<div id="tastePanel" hidden><p class="eyebrow" data-i="tasteLabel">WHAT KEEPS YOU WATCHING? PICK UP TO THREE.</p><p data-i="tasteHelp" class="hint">Your choices stay on this device. No account needed.</p><div id="tastes" class="chips"></div><button class="text-button" id="clearTaste" data-i="clearTaste">Clear saved taste</button></div>
+<div id="likePanel" hidden><label for="favorite" data-i="favoriteLabel">Start with a story you loved</label><select id="favorite"></select><p class="like-question" id="likeQuestion"></p><div id="reasons" class="chips"></div></div>
+<details id="preferences"><summary data-i="preferences">Fine-tune tonight</summary><div class="control-grid"><div><label for="pace" data-i="pace">Pacing</label><select id="pace"><option value="any" data-i="paceAny">Any pace</option><option value="fast" data-i="paceFast">Keep it moving</option><option value="slow" data-i="paceSlow">Let it build</option></select></div><label class="check"><input type="checkbox" id="shortOnly"><span data-i="shortOnly">Up to 12 episodes (known lengths only)</span></label></div><p class="eyebrow" data-i="avoid">LEAVE THESE OUT</p><div id="filters" class="chips"></div><p class="hint" data-i="filterHint">Filters use recorded tags. Missing flags don’t guarantee content is absent. Finished-only checks require known status.</p></details>
+<button id="go" class="cta" disabled data-i="go">Find my next watch <span>↗</span></button><p id="message" role="status" class="hint"></p></section>
+<section id="results" hidden><div class="sectionHead"><p class="eyebrow" data-i="yourPicks">YOUR NEXT WATCH</p><h2 data-i="resultsTitle">Three stories. Different reasons.</h2><p class="hint" data-i="matchHelp">AniMood Match reflects tag evidence, not a review score or a probability.</p></div><div id="cards"></div><button id="share" class="text-button" data-i="share">Copy this discovery link</button><p id="shareStatus" role="status"></p></section>
+<section id="guide" class="guide"><p class="eyebrow" data-i="guideLabel">A LITTLE LESS SCROLLING</p><h2 data-i="guideTitle">Choose the experience, not the shelf.</h2><p data-i="guideText">A time-travel setting can hide a puzzle, an emotional drama, or a frantic thriller. The reason you love a story is more useful than its genre alone.</p><div class="guide-links"><a href="/anime-like-steins-gate/">Anime like Steins;Gate →</a><a href="/anime-recommendation-quiz/">How the anime mood quiz works →</a></div></section>
+<footer><span>AniMood · <span data-i="footer">Independent, text-first anime discovery.</span></span><p data-i="privacy">Taste and feedback are stored on this device. No account or external tracking is required.</p></footer></main><script src="/assets/engine.js"></script><script src="/assets/app.js"></script></body></html>

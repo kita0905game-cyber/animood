@@ -1,22 +1,6 @@
-# AniMood development instructions
-
-Before implementation or data export, run `python tools/check_rules.py`.
-If it fails, do not assume cached rules are current. Fetch/read/reconcile changed
-GitHub rule documents. Only then run `python tools/check_rules.py --accept-reviewed`.
-This is a work-start check, not a continuous cloud watcher.
-
-Read PROJECT_CONTEXT.md, DATA_SCHEMA.md, RECOMMENDATION_RULES.md,
-AIRTABLE_MAPPING.md, PC_WORK_HANDOFF.md and OPERATIONS.md.
-GitHub Markdown is canonical for rules; Airtable is canonical for editorial data.
-Never edit data/anime.json manually. Export through tools/export_airtable.py.
-Never expose raw Airtable snapshots, approval evidence, user reviews or credentials.
-Keep snapshots under .local/ (gitignored).
-
-The initial ten titles were explicitly approved by the user on 2026-09-09.
-They are formal production records, not demo fixtures. AI-origin values retain
-their provenance. Do not undo approval based on the earlier ZIP snapshot.
-Do not automatically approve any additional titles.
-
-Validate with `python -m unittest discover -s tests`, `node tests/engine.test.js`,
-and desktop/mobile browser checks. Publish the explicit allowlisted website files
-via tools/build_site.py if using an artifact, excluding raw/private source data.
+# AniMood development
+Before work run python tools/check_rules.py. Read/reconcile changed upstream rules before --accept-reviewed; never acknowledge unread changes.
+Read START_HERE_PC_LUNA.md, PROJECT_CONTEXT.md, DATA_SCHEMA.md, RECOMMENDATION_RULES.md, AIRTABLE_MAPPING.md, PC_WORK_HANDOFF.md, OPERATIONS.md, ANIMOOD_TAG_TO_MATCH_v0.1.md.
+GitHub rules/code and Airtable editorial data are canonical. Public eligibility is English Title + General Tags. Editor's Take requires formal approval and Public Ready. Keep the initial ten approvals; never fabricate reviews or expose operator identity/private notes.
+Generate data with scripts/export-airtable.mjs; no manual edits to data/anime.json. Snapshots stay in .local/. Use static build allowlist. Test with node --test tests/v05.test.mjs and desktop/mobile checks.
+Do not claim remote daily sync or external analytics is operational until verified. No paid services or AI API are needed.

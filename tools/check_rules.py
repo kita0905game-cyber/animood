@@ -7,7 +7,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RULES = ['AGENTS.md','PROJECT_CONTEXT.md','DATA_SCHEMA.md','RECOMMENDATION_RULES.md',
-         'AIRTABLE_MAPPING.md','PC_WORK_HANDOFF.md','OPERATIONS.md','CHANGELOG.md']
+         'AIRTABLE_MAPPING.md','PC_WORK_HANDOFF.md','OPERATIONS.md','CHANGELOG.md',
+         'START_HERE_PC_LUNA.md','ANIMOOD_TAG_TO_MATCH_v0.1.md','data/tag_scoring.json']
 
 def git(*args):
     return subprocess.check_output(['git',*args],cwd=ROOT)

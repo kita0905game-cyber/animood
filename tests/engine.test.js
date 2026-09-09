@@ -1,15 +1,1 @@
-const assert = require('node:assert/strict');
-const {score,rank} = require('../assets/engine.js');
-const base = {id:'a',evaluationStatus:'評価済み',publicReady:true,traits:{mind:5,foreshadow:5},scores:{gore:null,ambiguity:null},flags:[]};
-const selection = {mood:['mind'],story:['foreshadow'],dealbreaker:[]};
-assert.equal(score({...base,publicReady:false},selection),null);
-assert.equal(score({...base,evaluationStatus:'未評価'},selection),null);
-assert.equal(score({...base,flags:['gore']},{...selection,dealbreaker:['gore']}),null);
-assert.equal(score({...base,scores:{gore:5}},{...selection,dealbreaker:['gore']}),null);
-assert.equal(score(base,{...selection,dealbreaker:['gore']}).contentUnknown,true);
-assert.equal(score(base,{...selection,story:['foreshadow','ambiguity']}).raw,score(base,selection).raw);
-assert.equal(score(base,{...selection,story:['ambiguity']}).incomplete,true);
-assert.equal(score({...base,scores:{gore:1,heaviness:5}},{...selection,dealbreaker:['gore']}).contentUnknown,false);
-assert.equal(score({...base,scores:{gore:1,heaviness:5}},{...selection,dealbreaker:['dark']}),null);
-assert.equal(rank([base,{...base,id:'b',evaluationStatus:'未評価'}],selection).length,1);
-console.log('Engine checks passed: gates, exclusions, unknowns, independent axes.');
+require('node:child_process').execFileSync(process.execPath,['--test',require('node:path').join(__dirname,'v05.test.mjs')],{stdio:'inherit'});
