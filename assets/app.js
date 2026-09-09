@@ -30,10 +30,12 @@ function track(event,detail={}){
  window.dispatchEvent(new CustomEvent('animood:track',{detail:{event,...safe}}));
  // External analytics can subscribe after a documented privacy/consent review.
 }
+const startedRoutes=new Set();
+function startDiscovery(){if(!startedRoutes.has(mode)){startedRoutes.add(mode);track(mode==='taste'?'taste_profile_start':'quiz_start');}}
 function label(map,key){return map[key]?t(...map[key]):key;}
 function chips(selector,defs,chosen,max,onchange){
  $(selector).innerHTML=Object.keys(defs).map(key=>`<button class="chip" data-key="${esc(key)}" aria-pressed="${chosen.has(key)}">${esc(label(defs,key))}</button>`).join('');
- $(selector).querySelectorAll('button').forEach(b=>b.onclick=()=>{const k=b.dataset.key;if(chosen.has(k))chosen.delete(k);else if(chosen.size<max)chosen.add(k);else{chosen.delete(chosen.values().next().value);chosen.add(k);}track('quiz_answer',{choice:k});onchange();renderControls();});
+ $(selector).querySelectorAll('button').forEach(b=>b.onclick=()=>{startDiscovery();const k=b.dataset.key;if(chosen.has(k))chosen.delete(k);else if(chosen.size<max)chosen.add(k);else{chosen.delete(chosen.values().next().value);chosen.add(k);}track('quiz_answer',{choice:k});onchange();renderControls();});
 }
 function renderControls(){
  document.documentElement.lang=lang;
@@ -78,13 +80,14 @@ function renderResults(){
 }
 function discover(){
  if(!loaded)return;
+ startDiscovery();
  if(mode==='mood'&&!moods.size||mode==='taste'&&!taste.size||mode==='like'&&!reasons.size){$('#message').textContent=t('Choose at least one preference.','好みを1つ以上選んでください。');return;}
  $('#message').textContent='';const p=profile();
  if(mode==='like'&&!Object.keys(p.likeTags).length){$('#message').textContent=t('That appeal is not recorded for this title yet. Choose another reason.','この作品には選んだ魅力のタグがまだありません。別の理由を選んでください。');return;}
  track(mode==='taste'?'taste_profile_complete':'quiz_complete');lastPicks=AniMoodEngine.rank(anime,p,config);renderResults();track('recommendation_view',{count:lastPicks.length});$('#results').scrollIntoView({behavior:'smooth'});
 }
 $('#go').onclick=discover;
-document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;$('#message').textContent='';$('#results').hidden=true;renderControls();track(mode==='taste'?'taste_profile_start':'quiz_start');});
+document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;$('#message').textContent='';$('#results').hidden=true;renderControls();startDiscovery();});
 document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>{lang=b.dataset.lang;save('animood-language',lang);renderControls();if(!$('#results').hidden)renderResults();});
 $('#favorite').onchange=()=>{favorite=$('#favorite').value;renderControls();};
 $('#clearTaste').onclick=()=>{taste.clear();save('animood-taste',[]);renderControls();};
