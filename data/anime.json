@@ -1,89 +1,5 @@
 [
   {
-    "id": "steins-gate",
-    "title": "STEINS;GATE",
-    "reason": "A slow-burn time-travel mystery with exceptional foreshadowing and payoff. Best when you want the story to click together piece by piece.",
-    "tags": [
-      "Time travel",
-      "Foreshadowing",
-      "Mystery",
-      "Huge payoff"
-    ],
-    "traits": {
-      "mind": 5,
-      "tension": 4,
-      "emotional": 4,
-      "cozy": 1,
-      "badass": 2,
-      "funny": 2,
-      "foreshadow": 5,
-      "world": 4,
-      "characters": 4,
-      "mystery": 5,
-      "action": 1,
-      "slow": 4,
-      "balanced": 3,
-      "fast": 2,
-      "light": 1,
-      "medium": 3,
-      "heavy": 4
-    },
-    "flags": [
-      "slowstart"
-    ],
-    "ja": {
-      "title": "STEINS;GATE（シュタインズ・ゲート）",
-      "reason": "じっくり進むタイムトラベルの謎と、鮮やかな伏線回収が魅力。散らばった出来事が少しずつつながる快感を味わいたいときに。",
-      "tags": [
-        "タイムトラベル",
-        "伏線回収",
-        "謎解き",
-        "大きなカタルシス"
-      ]
-    }
-  },
-  {
-    "id": "summertime-rendering",
-    "title": "Summer Time Rendering",
-    "reason": "A tense time-loop thriller where the rules and limitations matter. Strong if you want mystery, pressure and an active supernatural threat.",
-    "tags": [
-      "Time loop",
-      "High tension",
-      "Mystery",
-      "Supernatural battle"
-    ],
-    "traits": {
-      "mind": 4,
-      "tension": 5,
-      "emotional": 3,
-      "cozy": 1,
-      "badass": 3,
-      "funny": 1,
-      "foreshadow": 4,
-      "world": 3,
-      "characters": 3,
-      "mystery": 5,
-      "action": 4,
-      "slow": 1,
-      "balanced": 3,
-      "fast": 5,
-      "light": 1,
-      "medium": 4,
-      "heavy": 4
-    },
-    "flags": [],
-    "ja": {
-      "title": "サマータイムレンダ",
-      "reason": "ルールや制約が鍵を握る、緊張感あふれるタイムループ・サスペンス。謎を追いながら、迫りくる超常的な脅威にハラハラしたいときに。",
-      "tags": [
-        "タイムループ",
-        "緊張感",
-        "謎解き",
-        "異能バトル"
-      ]
-    }
-  },
-  {
     "id": "86",
     "title": "86 EIGHTY-SIX",
     "reason": "War drama built around social inequality, discrimination and bonds that cross a divided society. Strong emotional payoff and a cast fighting against the world around them.",
@@ -92,28 +8,6 @@
       "Social inequality",
       "Emotional",
       "Character bonds"
-    ],
-    "traits": {
-      "mind": 3,
-      "tension": 4,
-      "emotional": 5,
-      "cozy": 1,
-      "badass": 4,
-      "funny": 1,
-      "foreshadow": 2,
-      "world": 5,
-      "characters": 5,
-      "mystery": 2,
-      "action": 4,
-      "slow": 2,
-      "balanced": 4,
-      "fast": 3,
-      "light": 1,
-      "medium": 3,
-      "heavy": 5
-    },
-    "flags": [
-      "dark"
     ],
     "ja": {
       "title": "86―エイティシックス―",
@@ -124,136 +18,57 @@
         "感動",
         "仲間の絆"
       ]
-    }
-  },
-  {
-    "id": "evangelion",
-    "title": "Neon Genesis Evangelion",
-    "reason": "Dense lore, psychological conflict and moral ambiguity wrapped in an apocalyptic bio-mecha story. Best if you enjoy questions that do not always resolve cleanly.",
-    "tags": [
-      "Psychological",
-      "Deep lore",
-      "Moral ambiguity",
-      "Apocalyptic"
-    ],
+    },
     "traits": {
-      "mind": 5,
+      "mind": 3,
       "tension": 4,
-      "emotional": 4,
       "cozy": 1,
-      "badass": 3,
-      "funny": 1,
-      "foreshadow": 3,
-      "world": 5,
-      "characters": 5,
-      "mystery": 5,
-      "action": 4,
-      "slow": 3,
-      "balanced": 3,
-      "fast": 2,
-      "light": 1,
-      "medium": 3,
-      "heavy": 5
-    },
-    "flags": [
-      "unclear",
-      "dark"
-    ],
-    "ja": {
-      "title": "新世紀エヴァンゲリオン",
-      "reason": "終末的な世界と生体兵器をめぐる物語に、緻密な設定、心の葛藤、割り切れない善悪が重なる作品。明快な答えだけではない問いを楽しみたいときに。",
-      "tags": [
-        "心理描写",
-        "奥深い設定",
-        "曖昧な善悪",
-        "終末世界"
-      ]
-    }
-  },
-  {
-    "id": "natsume",
-    "title": "Natsume's Book of Friends",
-    "reason": "Gentle supernatural stories about living alongside yokai, returning their names, and forming quiet bonds. Nyanko-sensei adds both charm and hidden power.",
-    "tags": [
-      "Cozy",
-      "Yokai",
-      "Gentle",
-      "Emotional"
-    ],
-    "traits": {
-      "mind": 2,
-      "tension": 1,
-      "emotional": 4,
-      "cozy": 5,
-      "badass": 2,
-      "funny": 3,
-      "foreshadow": 1,
-      "world": 4,
-      "characters": 5,
-      "mystery": 2,
-      "action": 1,
-      "slow": 4,
-      "balanced": 3,
-      "fast": 1,
-      "light": 5,
-      "medium": 2,
-      "heavy": 1
-    },
-    "flags": [],
-    "ja": {
-      "title": "夏目友人帳",
-      "reason": "妖怪たちに名前を返しながら、静かな絆を育んでいく優しい物語。ニャンコ先生の愛らしさと秘めた力も魅力。穏やかな余韻を楽しみたいときに。",
-      "tags": [
-        "癒し",
-        "妖怪",
-        "優しい物語",
-        "感動"
-      ]
-    }
-  },
-  {
-    "id": "made-in-abyss",
-    "title": "Made in Abyss",
-    "reason": "A uniquely built world and a journey into the unknown, with a brutal contrast between cute character designs and disturbing danger.",
-    "tags": [
-      "Dark fantasy",
-      "Exploration",
-      "Unique world",
-      "Disturbing"
-    ],
-    "traits": {
-      "mind": 4,
-      "tension": 5,
-      "emotional": 5,
-      "cozy": 1,
-      "badass": 2,
-      "funny": 1,
-      "foreshadow": 3,
-      "world": 5,
-      "characters": 4,
-      "mystery": 5,
-      "action": 3,
+      "badass": 4,
       "slow": 2,
       "balanced": 4,
       "fast": 3,
       "light": 1,
-      "medium": 2,
-      "heavy": 5
+      "medium": 3,
+      "heavy": 5,
+      "emotional": 5,
+      "funny": 1,
+      "foreshadow": 2,
+      "world": 5,
+      "characters": 5,
+      "mystery": 2,
+      "action": 4,
+      "ambiguity": null
     },
     "flags": [
-      "gore",
       "dark"
     ],
-    "ja": {
-      "title": "メイドインアビス",
-      "reason": "独自の世界観で描かれる、未知への冒険。かわいらしいキャラクターと、容赦のない危険の対比が強く心に残ります。",
-      "tags": [
-        "ダークファンタジー",
-        "探検",
-        "独特の世界観",
-        "衝撃的な描写"
-      ]
-    }
+    "scores": {
+      "pace": null,
+      "heaviness": null,
+      "gore": null,
+      "emotional": 5,
+      "funny": 1,
+      "foreshadowingPayoff": 2,
+      "worldbuilding": 5,
+      "characters": 5,
+      "mystery": 2,
+      "action": 4,
+      "ambiguity": null
+    },
+    "moodTags": [
+      "ハラハラしたい",
+      "感動したい",
+      "カッコいい"
+    ],
+    "storyTags": [
+      "世界観",
+      "キャラクター",
+      "アクション"
+    ],
+    "evaluationStatus": "評価済み",
+    "publicReady": true,
+    "provenance": "AI暫定推定",
+    "confidence": "中"
   },
   {
     "id": "black-lagoon",
@@ -265,26 +80,6 @@
       "Guns",
       "Stylish"
     ],
-    "traits": {
-      "mind": 2,
-      "tension": 4,
-      "emotional": 2,
-      "cozy": 1,
-      "badass": 5,
-      "funny": 2,
-      "foreshadow": 1,
-      "world": 4,
-      "characters": 5,
-      "mystery": 1,
-      "action": 5,
-      "slow": 1,
-      "balanced": 3,
-      "fast": 5,
-      "light": 1,
-      "medium": 4,
-      "heavy": 3
-    },
-    "flags": [],
     "ja": {
       "title": "BLACK LAGOON（ブラック・ラグーン）",
       "reason": "裏社会を舞台に、魅力的なアウトローたちが暴れ回るアクション。複雑な謎解きより、銃撃戦や雰囲気、登場人物の格好よさを楽しみたいときに。",
@@ -294,89 +89,127 @@
         "銃撃戦",
         "スタイリッシュ"
       ]
-    }
-  },
-  {
-    "id": "mushoku-tensei",
-    "title": "Mushoku Tensei",
-    "reason": "A familiar isekai premise elevated by unusually detailed worldbuilding and a cast with strong individual presence.",
-    "tags": [
-      "Isekai",
-      "Worldbuilding",
-      "Character growth",
-      "Fantasy journey"
-    ],
+    },
     "traits": {
       "mind": 2,
-      "tension": 3,
-      "emotional": 4,
-      "cozy": 2,
-      "badass": 3,
-      "funny": 3,
-      "foreshadow": 2,
-      "world": 5,
-      "characters": 5,
-      "mystery": 2,
-      "action": 4,
-      "slow": 3,
-      "balanced": 4,
-      "fast": 2,
-      "light": 2,
+      "tension": 4,
+      "cozy": 1,
+      "badass": 5,
+      "slow": 1,
+      "balanced": 3,
+      "fast": 5,
+      "light": 1,
       "medium": 4,
-      "heavy": 3
+      "heavy": 3,
+      "emotional": 2,
+      "funny": 2,
+      "foreshadow": 1,
+      "world": 4,
+      "characters": 5,
+      "mystery": 1,
+      "action": 5,
+      "ambiguity": null
     },
     "flags": [],
-    "ja": {
-      "title": "無職転生 ～異世界行ったら本気だす～",
-      "reason": "異世界転生という題材を、細やかな世界観と、一人ひとりの存在感がある登場人物で描く作品。世界に浸りながら旅や成長を楽しみたいときに。",
-      "tags": [
-        "異世界転生",
-        "世界観",
-        "キャラクターの成長",
-        "ファンタジーの旅"
-      ]
-    }
+    "scores": {
+      "pace": null,
+      "heaviness": null,
+      "gore": null,
+      "emotional": 2,
+      "funny": 2,
+      "foreshadowingPayoff": 1,
+      "worldbuilding": 4,
+      "characters": 5,
+      "mystery": 1,
+      "action": 5,
+      "ambiguity": null
+    },
+    "moodTags": [
+      "ハラハラしたい",
+      "カッコいい"
+    ],
+    "storyTags": [
+      "世界観",
+      "キャラクター",
+      "アクション"
+    ],
+    "evaluationStatus": "評価済み",
+    "publicReady": true,
+    "provenance": "AI暫定推定",
+    "confidence": "中"
   },
   {
-    "id": "oddtaxi",
-    "title": "ODDTAXI",
-    "reason": "A compact mystery built around one major pleasure: scattered details eventually connecting in a satisfying payoff.",
+    "id": "evangelion",
+    "title": "Neon Genesis Evangelion",
+    "reason": "Dense lore, psychological conflict and moral ambiguity wrapped in an apocalyptic bio-mecha story. Best if you enjoy questions that do not always resolve cleanly.",
     "tags": [
-      "Foreshadowing",
-      "Mystery",
-      "Payoff",
-      "Interconnected story"
+      "Psychological",
+      "Deep lore",
+      "Moral ambiguity",
+      "Apocalyptic"
     ],
-    "traits": {
-      "mind": 4,
-      "tension": 3,
-      "emotional": 2,
-      "cozy": 1,
-      "badass": 1,
-      "funny": 2,
-      "foreshadow": 5,
-      "world": 3,
-      "characters": 4,
-      "mystery": 5,
-      "action": 1,
-      "slow": 3,
-      "balanced": 4,
-      "fast": 2,
-      "light": 2,
-      "medium": 4,
-      "heavy": 2
-    },
-    "flags": [],
     "ja": {
-      "title": "オッドタクシー",
-      "reason": "散りばめられた小さな出来事が、やがて気持ちよくつながっていくミステリー。まとまりのある物語と伏線回収を楽しみたいときに。",
+      "title": "新世紀エヴァンゲリオン",
+      "reason": "終末的な世界と生体兵器をめぐる物語に、緻密な設定、心の葛藤、割り切れない善悪が重なる作品。明快な答えだけではない問いを楽しみたいときに。",
       "tags": [
-        "伏線回収",
-        "謎解き",
-        "納得の結末",
-        "交差する物語"
+        "心理描写",
+        "奥深い設定",
+        "曖昧な善悪",
+        "終末世界"
       ]
-    }
+    },
+    "traits": {
+      "mind": 5,
+      "tension": 4,
+      "cozy": 1,
+      "badass": 3,
+      "slow": 3,
+      "balanced": 3,
+      "fast": 2,
+      "light": 1,
+      "medium": 3,
+      "heavy": 5,
+      "emotional": 4,
+      "funny": 1,
+      "foreshadow": 3,
+      "world": 5,
+      "characters": 5,
+      "mystery": 5,
+      "action": 4,
+      "ambiguity": null
+    },
+    "flags": [
+      "unclear",
+      "dark"
+    ],
+    "scores": {
+      "pace": null,
+      "heaviness": null,
+      "gore": null,
+      "emotional": 4,
+      "funny": 1,
+      "foreshadowingPayoff": 3,
+      "worldbuilding": 5,
+      "characters": 5,
+      "mystery": 5,
+      "action": 4,
+      "ambiguity": null
+    },
+    "moodTags": [
+      "頭を使いたい",
+      "ハラハラしたい",
+      "感動したい"
+    ],
+    "storyTags": [
+      "世界観",
+      "キャラクター",
+      "謎・考察",
+      "アクション"
+    ],
+    "evaluationStatus": "評価済み",
+    "publicReady": true,
+    "provenance": "AI暫定推定",
+    "confidence": "中"
   },
   {
     "id": "konosuba",
@@ -388,26 +221,6 @@
       "Lighthearted",
       "Fantasy"
     ],
-    "traits": {
-      "mind": 1,
-      "tension": 1,
-      "emotional": 1,
-      "cozy": 4,
-      "badass": 2,
-      "funny": 5,
-      "foreshadow": 1,
-      "world": 2,
-      "characters": 5,
-      "mystery": 1,
-      "action": 2,
-      "slow": 1,
-      "balanced": 3,
-      "fast": 4,
-      "light": 5,
-      "medium": 1,
-      "heavy": 1
-    },
-    "flags": [],
     "ja": {
       "title": "この素晴らしい世界に祝福を！",
       "reason": "とにかく笑いたいときに。個性の強い仲間たちのドタバタと、ファンタジー世界で繰り広げられるコメディを気軽に楽しめます。",
@@ -417,6 +230,464 @@
         "気軽に観られる",
         "ファンタジー"
       ]
-    }
+    },
+    "traits": {
+      "mind": 1,
+      "tension": 1,
+      "cozy": 4,
+      "badass": 2,
+      "slow": 1,
+      "balanced": 3,
+      "fast": 4,
+      "light": 5,
+      "medium": 1,
+      "heavy": 1,
+      "emotional": 1,
+      "funny": 5,
+      "foreshadow": 1,
+      "world": 2,
+      "characters": 5,
+      "mystery": 1,
+      "action": 2,
+      "ambiguity": null
+    },
+    "flags": [],
+    "scores": {
+      "pace": null,
+      "heaviness": null,
+      "gore": null,
+      "emotional": 1,
+      "funny": 5,
+      "foreshadowingPayoff": 1,
+      "worldbuilding": 2,
+      "characters": 5,
+      "mystery": 1,
+      "action": 2,
+      "ambiguity": null
+    },
+    "moodTags": [
+      "癒されたい",
+      "笑いたい"
+    ],
+    "storyTags": [
+      "キャラクター"
+    ],
+    "evaluationStatus": "評価済み",
+    "publicReady": true,
+    "provenance": "AI暫定推定",
+    "confidence": "中"
+  },
+  {
+    "id": "made-in-abyss",
+    "title": "Made in Abyss",
+    "reason": "A uniquely built world and a journey into the unknown, with a brutal contrast between cute character designs and disturbing danger.",
+    "tags": [
+      "Dark fantasy",
+      "Exploration",
+      "Unique world",
+      "Disturbing"
+    ],
+    "ja": {
+      "title": "メイドインアビス",
+      "reason": "独自の世界観で描かれる、未知への冒険。かわいらしいキャラクターと、容赦のない危険の対比が強く心に残ります。",
+      "tags": [
+        "ダークファンタジー",
+        "探検",
+        "独特の世界観",
+        "衝撃的な描写"
+      ]
+    },
+    "traits": {
+      "mind": 4,
+      "tension": 5,
+      "cozy": 1,
+      "badass": 2,
+      "slow": 2,
+      "balanced": 4,
+      "fast": 3,
+      "light": 1,
+      "medium": 2,
+      "heavy": 5,
+      "emotional": 5,
+      "funny": 1,
+      "foreshadow": 3,
+      "world": 5,
+      "characters": 4,
+      "mystery": 5,
+      "action": 3,
+      "ambiguity": null
+    },
+    "flags": [
+      "gore",
+      "dark"
+    ],
+    "scores": {
+      "pace": null,
+      "heaviness": null,
+      "gore": null,
+      "emotional": 5,
+      "funny": 1,
+      "foreshadowingPayoff": 3,
+      "worldbuilding": 5,
+      "characters": 4,
+      "mystery": 5,
+      "action": 3,
+      "ambiguity": null
+    },
+    "moodTags": [
+      "頭を使いたい",
+      "ハラハラしたい",
+      "感動したい"
+    ],
+    "storyTags": [
+      "世界観",
+      "キャラクター",
+      "謎・考察"
+    ],
+    "evaluationStatus": "評価済み",
+    "publicReady": true,
+    "provenance": "AI暫定推定",
+    "confidence": "中"
+  },
+  {
+    "id": "mushoku-tensei",
+    "title": "Mushoku Tensei",
+    "reason": "A familiar isekai premise elevated by unusually detailed worldbuilding and a cast with strong individual presence.",
+    "tags": [
+      "Isekai",
+      "Worldbuilding",
+      "Character growth",
+      "Fantasy journey"
+    ],
+    "ja": {
+      "title": "無職転生 ～異世界行ったら本気だす～",
+      "reason": "異世界転生という題材を、細やかな世界観と、一人ひとりの存在感がある登場人物で描く作品。世界に浸りながら旅や成長を楽しみたいときに。",
+      "tags": [
+        "異世界転生",
+        "世界観",
+        "キャラクターの成長",
+        "ファンタジーの旅"
+      ]
+    },
+    "traits": {
+      "mind": 2,
+      "tension": 3,
+      "cozy": 2,
+      "badass": 3,
+      "slow": 3,
+      "balanced": 4,
+      "fast": 2,
+      "light": 2,
+      "medium": 4,
+      "heavy": 3,
+      "emotional": 4,
+      "funny": 3,
+      "foreshadow": 2,
+      "world": 5,
+      "characters": 5,
+      "mystery": 2,
+      "action": 4,
+      "ambiguity": null
+    },
+    "flags": [],
+    "scores": {
+      "pace": null,
+      "heaviness": null,
+      "gore": null,
+      "emotional": 4,
+      "funny": 3,
+      "foreshadowingPayoff": 2,
+      "worldbuilding": 5,
+      "characters": 5,
+      "mystery": 2,
+      "action": 4,
+      "ambiguity": null
+    },
+    "moodTags": [
+      "感動したい"
+    ],
+    "storyTags": [
+      "世界観",
+      "キャラクター",
+      "アクション"
+    ],
+    "evaluationStatus": "評価済み",
+    "publicReady": true,
+    "provenance": "AI暫定推定",
+    "confidence": "中"
+  },
+  {
+    "id": "natsume",
+    "title": "Natsume's Book of Friends",
+    "reason": "Gentle supernatural stories about living alongside yokai, returning their names, and forming quiet bonds. Nyanko-sensei adds both charm and hidden power.",
+    "tags": [
+      "Cozy",
+      "Yokai",
+      "Gentle",
+      "Emotional"
+    ],
+    "ja": {
+      "title": "夏目友人帳",
+      "reason": "妖怪たちに名前を返しながら、静かな絆を育んでいく優しい物語。ニャンコ先生の愛らしさと秘めた力も魅力。穏やかな余韻を楽しみたいときに。",
+      "tags": [
+        "癒し",
+        "妖怪",
+        "優しい物語",
+        "感動"
+      ]
+    },
+    "traits": {
+      "mind": 2,
+      "tension": 1,
+      "cozy": 5,
+      "badass": 2,
+      "slow": 4,
+      "balanced": 3,
+      "fast": 1,
+      "light": 5,
+      "medium": 2,
+      "heavy": 1,
+      "emotional": 4,
+      "funny": 3,
+      "foreshadow": 1,
+      "world": 4,
+      "characters": 5,
+      "mystery": 2,
+      "action": 1,
+      "ambiguity": null
+    },
+    "flags": [],
+    "scores": {
+      "pace": null,
+      "heaviness": null,
+      "gore": null,
+      "emotional": 4,
+      "funny": 3,
+      "foreshadowingPayoff": 1,
+      "worldbuilding": 4,
+      "characters": 5,
+      "mystery": 2,
+      "action": 1,
+      "ambiguity": null
+    },
+    "moodTags": [
+      "感動したい",
+      "癒されたい"
+    ],
+    "storyTags": [
+      "世界観",
+      "キャラクター"
+    ],
+    "evaluationStatus": "評価済み",
+    "publicReady": true,
+    "provenance": "AI暫定推定",
+    "confidence": "中"
+  },
+  {
+    "id": "oddtaxi",
+    "title": "ODDTAXI",
+    "reason": "A compact mystery built around one major pleasure: scattered details eventually connecting in a satisfying payoff.",
+    "tags": [
+      "Foreshadowing",
+      "Mystery",
+      "Payoff",
+      "Interconnected story"
+    ],
+    "ja": {
+      "title": "オッドタクシー",
+      "reason": "散りばめられた小さな出来事が、やがて気持ちよくつながっていくミステリー。まとまりのある物語と伏線回収を楽しみたいときに。",
+      "tags": [
+        "伏線回収",
+        "謎解き",
+        "納得の結末",
+        "交差する物語"
+      ]
+    },
+    "traits": {
+      "mind": 4,
+      "tension": 3,
+      "cozy": 1,
+      "badass": 1,
+      "slow": 3,
+      "balanced": 4,
+      "fast": 2,
+      "light": 2,
+      "medium": 4,
+      "heavy": 2,
+      "emotional": 2,
+      "funny": 2,
+      "foreshadow": 5,
+      "world": 3,
+      "characters": 4,
+      "mystery": 5,
+      "action": 1,
+      "ambiguity": null
+    },
+    "flags": [],
+    "scores": {
+      "pace": null,
+      "heaviness": null,
+      "gore": null,
+      "emotional": 2,
+      "funny": 2,
+      "foreshadowingPayoff": 5,
+      "worldbuilding": 3,
+      "characters": 4,
+      "mystery": 5,
+      "action": 1,
+      "ambiguity": null
+    },
+    "moodTags": [
+      "頭を使いたい"
+    ],
+    "storyTags": [
+      "伏線回収",
+      "キャラクター",
+      "謎・考察"
+    ],
+    "evaluationStatus": "評価済み",
+    "publicReady": true,
+    "provenance": "AI暫定推定",
+    "confidence": "中"
+  },
+  {
+    "id": "steins-gate",
+    "title": "STEINS;GATE",
+    "reason": "A slow-burn time-travel mystery with exceptional foreshadowing and payoff. Best when you want the story to click together piece by piece.",
+    "tags": [
+      "Time travel",
+      "Foreshadowing",
+      "Mystery",
+      "Huge payoff"
+    ],
+    "ja": {
+      "title": "STEINS;GATE（シュタインズ・ゲート）",
+      "reason": "じっくり進むタイムトラベルの謎と、鮮やかな伏線回収が魅力。散らばった出来事が少しずつつながる快感を味わいたいときに。",
+      "tags": [
+        "タイムトラベル",
+        "伏線回収",
+        "謎解き",
+        "大きなカタルシス"
+      ]
+    },
+    "traits": {
+      "mind": 5,
+      "tension": 4,
+      "cozy": 1,
+      "badass": 2,
+      "slow": 4,
+      "balanced": 3,
+      "fast": 2,
+      "light": 1,
+      "medium": 3,
+      "heavy": 4,
+      "emotional": 4,
+      "funny": 2,
+      "foreshadow": 5,
+      "world": 4,
+      "characters": 4,
+      "mystery": 5,
+      "action": 1,
+      "ambiguity": null
+    },
+    "flags": [
+      "slowstart"
+    ],
+    "scores": {
+      "pace": null,
+      "heaviness": null,
+      "gore": null,
+      "emotional": 4,
+      "funny": 2,
+      "foreshadowingPayoff": 5,
+      "worldbuilding": 4,
+      "characters": 4,
+      "mystery": 5,
+      "action": 1,
+      "ambiguity": null
+    },
+    "moodTags": [
+      "頭を使いたい",
+      "ハラハラしたい",
+      "感動したい"
+    ],
+    "storyTags": [
+      "伏線回収",
+      "世界観",
+      "キャラクター",
+      "謎・考察"
+    ],
+    "evaluationStatus": "評価済み",
+    "publicReady": true,
+    "provenance": "AI暫定推定",
+    "confidence": "中"
+  },
+  {
+    "id": "summertime-rendering",
+    "title": "Summer Time Rendering",
+    "reason": "A tense time-loop thriller where the rules and limitations matter. Strong if you want mystery, pressure and an active supernatural threat.",
+    "tags": [
+      "Time loop",
+      "High tension",
+      "Mystery",
+      "Supernatural battle"
+    ],
+    "ja": {
+      "title": "サマータイムレンダ",
+      "reason": "ルールや制約が鍵を握る、緊張感あふれるタイムループ・サスペンス。謎を追いながら、迫りくる超常的な脅威にハラハラしたいときに。",
+      "tags": [
+        "タイムループ",
+        "緊張感",
+        "謎解き",
+        "異能バトル"
+      ]
+    },
+    "traits": {
+      "mind": 4,
+      "tension": 5,
+      "cozy": 1,
+      "badass": 3,
+      "slow": 1,
+      "balanced": 3,
+      "fast": 5,
+      "light": 1,
+      "medium": 4,
+      "heavy": 4,
+      "emotional": 3,
+      "funny": 1,
+      "foreshadow": 4,
+      "world": 3,
+      "characters": 3,
+      "mystery": 5,
+      "action": 4,
+      "ambiguity": null
+    },
+    "flags": [],
+    "scores": {
+      "pace": null,
+      "heaviness": null,
+      "gore": null,
+      "emotional": 3,
+      "funny": 1,
+      "foreshadowingPayoff": 4,
+      "worldbuilding": 3,
+      "characters": 3,
+      "mystery": 5,
+      "action": 4,
+      "ambiguity": null
+    },
+    "moodTags": [
+      "頭を使いたい",
+      "ハラハラしたい"
+    ],
+    "storyTags": [
+      "伏線回収",
+      "謎・考察",
+      "アクション"
+    ],
+    "evaluationStatus": "評価済み",
+    "publicReady": true,
+    "provenance": "AI暫定推定",
+    "confidence": "中"
   }
 ]
