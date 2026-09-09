@@ -1,0 +1,322 @@
+[
+  {
+    "id": "steins-gate",
+    "title": "STEINS;GATE",
+    "reason": "A slow-burn time-travel mystery with exceptional foreshadowing and payoff. Best when you want the story to click together piece by piece.",
+    "tags": [
+      "Time travel",
+      "Foreshadowing",
+      "Mystery",
+      "Huge payoff"
+    ],
+    "traits": {
+      "mind": 5,
+      "tension": 4,
+      "emotional": 4,
+      "cozy": 1,
+      "badass": 2,
+      "funny": 2,
+      "foreshadow": 5,
+      "world": 4,
+      "characters": 4,
+      "mystery": 5,
+      "action": 1,
+      "slow": 4,
+      "balanced": 3,
+      "fast": 2,
+      "light": 1,
+      "medium": 3,
+      "heavy": 4
+    },
+    "flags": [
+      "slowstart"
+    ]
+  },
+  {
+    "id": "summertime-rendering",
+    "title": "Summer Time Rendering",
+    "reason": "A tense time-loop thriller where the rules and limitations matter. Strong if you want mystery, pressure and an active supernatural threat.",
+    "tags": [
+      "Time loop",
+      "High tension",
+      "Mystery",
+      "Supernatural battle"
+    ],
+    "traits": {
+      "mind": 4,
+      "tension": 5,
+      "emotional": 3,
+      "cozy": 1,
+      "badass": 3,
+      "funny": 1,
+      "foreshadow": 4,
+      "world": 3,
+      "characters": 3,
+      "mystery": 5,
+      "action": 4,
+      "slow": 1,
+      "balanced": 3,
+      "fast": 5,
+      "light": 1,
+      "medium": 4,
+      "heavy": 4
+    },
+    "flags": []
+  },
+  {
+    "id": "86",
+    "title": "86 EIGHTY-SIX",
+    "reason": "War drama built around social inequality, discrimination and bonds that cross a divided society. Strong emotional payoff and a cast fighting against the world around them.",
+    "tags": [
+      "War",
+      "Social inequality",
+      "Emotional",
+      "Character bonds"
+    ],
+    "traits": {
+      "mind": 3,
+      "tension": 4,
+      "emotional": 5,
+      "cozy": 1,
+      "badass": 4,
+      "funny": 1,
+      "foreshadow": 2,
+      "world": 5,
+      "characters": 5,
+      "mystery": 2,
+      "action": 4,
+      "slow": 2,
+      "balanced": 4,
+      "fast": 3,
+      "light": 1,
+      "medium": 3,
+      "heavy": 5
+    },
+    "flags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "evangelion",
+    "title": "Neon Genesis Evangelion",
+    "reason": "Dense lore, psychological conflict and moral ambiguity wrapped in an apocalyptic bio-mecha story. Best if you enjoy questions that do not always resolve cleanly.",
+    "tags": [
+      "Psychological",
+      "Deep lore",
+      "Moral ambiguity",
+      "Apocalyptic"
+    ],
+    "traits": {
+      "mind": 5,
+      "tension": 4,
+      "emotional": 4,
+      "cozy": 1,
+      "badass": 3,
+      "funny": 1,
+      "foreshadow": 3,
+      "world": 5,
+      "characters": 5,
+      "mystery": 5,
+      "action": 4,
+      "slow": 3,
+      "balanced": 3,
+      "fast": 2,
+      "light": 1,
+      "medium": 3,
+      "heavy": 5
+    },
+    "flags": [
+      "unclear",
+      "dark"
+    ]
+  },
+  {
+    "id": "natsume",
+    "title": "Natsume's Book of Friends",
+    "reason": "Gentle supernatural stories about living alongside yokai, returning their names, and forming quiet bonds. Nyanko-sensei adds both charm and hidden power.",
+    "tags": [
+      "Cozy",
+      "Yokai",
+      "Gentle",
+      "Emotional"
+    ],
+    "traits": {
+      "mind": 2,
+      "tension": 1,
+      "emotional": 4,
+      "cozy": 5,
+      "badass": 2,
+      "funny": 3,
+      "foreshadow": 1,
+      "world": 4,
+      "characters": 5,
+      "mystery": 2,
+      "action": 1,
+      "slow": 4,
+      "balanced": 3,
+      "fast": 1,
+      "light": 5,
+      "medium": 2,
+      "heavy": 1
+    },
+    "flags": []
+  },
+  {
+    "id": "made-in-abyss",
+    "title": "Made in Abyss",
+    "reason": "A uniquely built world and a journey into the unknown, with a brutal contrast between cute character designs and disturbing danger.",
+    "tags": [
+      "Dark fantasy",
+      "Exploration",
+      "Unique world",
+      "Disturbing"
+    ],
+    "traits": {
+      "mind": 4,
+      "tension": 5,
+      "emotional": 5,
+      "cozy": 1,
+      "badass": 2,
+      "funny": 1,
+      "foreshadow": 3,
+      "world": 5,
+      "characters": 4,
+      "mystery": 5,
+      "action": 3,
+      "slow": 2,
+      "balanced": 4,
+      "fast": 3,
+      "light": 1,
+      "medium": 2,
+      "heavy": 5
+    },
+    "flags": [
+      "gore",
+      "dark"
+    ]
+  },
+  {
+    "id": "black-lagoon",
+    "title": "BLACK LAGOON",
+    "reason": "A stylish criminal-underworld action series where nearly everyone feels cool. Pick it when atmosphere, guns and outlaw charisma matter more than puzzle-box plotting.",
+    "tags": [
+      "Underworld",
+      "Badass cast",
+      "Guns",
+      "Stylish"
+    ],
+    "traits": {
+      "mind": 2,
+      "tension": 4,
+      "emotional": 2,
+      "cozy": 1,
+      "badass": 5,
+      "funny": 2,
+      "foreshadow": 1,
+      "world": 4,
+      "characters": 5,
+      "mystery": 1,
+      "action": 5,
+      "slow": 1,
+      "balanced": 3,
+      "fast": 5,
+      "light": 1,
+      "medium": 4,
+      "heavy": 3
+    },
+    "flags": []
+  },
+  {
+    "id": "mushoku-tensei",
+    "title": "Mushoku Tensei",
+    "reason": "A familiar isekai premise elevated by unusually detailed worldbuilding and a cast with strong individual presence.",
+    "tags": [
+      "Isekai",
+      "Worldbuilding",
+      "Character growth",
+      "Fantasy journey"
+    ],
+    "traits": {
+      "mind": 2,
+      "tension": 3,
+      "emotional": 4,
+      "cozy": 2,
+      "badass": 3,
+      "funny": 3,
+      "foreshadow": 2,
+      "world": 5,
+      "characters": 5,
+      "mystery": 2,
+      "action": 4,
+      "slow": 3,
+      "balanced": 4,
+      "fast": 2,
+      "light": 2,
+      "medium": 4,
+      "heavy": 3
+    },
+    "flags": []
+  },
+  {
+    "id": "oddtaxi",
+    "title": "ODDTAXI",
+    "reason": "A compact mystery built around one major pleasure: scattered details eventually connecting in a satisfying payoff.",
+    "tags": [
+      "Foreshadowing",
+      "Mystery",
+      "Payoff",
+      "Interconnected story"
+    ],
+    "traits": {
+      "mind": 4,
+      "tension": 3,
+      "emotional": 2,
+      "cozy": 1,
+      "badass": 1,
+      "funny": 2,
+      "foreshadow": 5,
+      "world": 3,
+      "characters": 4,
+      "mystery": 5,
+      "action": 1,
+      "slow": 3,
+      "balanced": 4,
+      "fast": 2,
+      "light": 2,
+      "medium": 4,
+      "heavy": 2
+    },
+    "flags": []
+  },
+  {
+    "id": "konosuba",
+    "title": "KONOSUBA",
+    "reason": "Easy pick when the goal is simple: laugh. Chaotic party dynamics and fantasy comedy carry the experience.",
+    "tags": [
+      "Comedy",
+      "Chaotic cast",
+      "Lighthearted",
+      "Fantasy"
+    ],
+    "traits": {
+      "mind": 1,
+      "tension": 1,
+      "emotional": 1,
+      "cozy": 4,
+      "badass": 2,
+      "funny": 5,
+      "foreshadow": 1,
+      "world": 2,
+      "characters": 5,
+      "mystery": 1,
+      "action": 2,
+      "slow": 1,
+      "balanced": 3,
+      "fast": 4,
+      "light": 5,
+      "medium": 1,
+      "heavy": 1
+    },
+    "flags": []
+  }
+]

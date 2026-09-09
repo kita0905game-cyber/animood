@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AniMood helps you pick your next anime based on the mood and experience you want tonight.">
+  <title>AniMood — Find anime for your mood</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="logo">AniMood</div>
+      <div class="eyebrow">MOOD-FIRST ANIME DISCOVERY</div>
+      <h1>Stop scrolling.<br>Find what fits tonight.</h1>
+      <p class="lead">Pick the experience you want. AniMood matches you with anime based on mood, payoff, pacing, atmosphere and deal-breakers — not just genre.</p>
+      <button class="cta" id="startBtn">Find my anime</button>
+      <div class="micro">No account. No endless watchlist. Just picks.</div>
+    </header>
+
+    <section class="panel hidden" id="quizPanel">
+      <div class="progress"><span id="progressBar"></span></div>
+      <div id="questionHost"></div>
+      <div class="quiz-nav">
+        <button class="ghost" id="backBtn">Back</button>
+        <button class="cta small" id="nextBtn">Next</button>
+      </div>
+    </section>
+
+    <section class="hidden" id="resultsPanel">
+      <div class="results-head">
+        <div>
+          <div class="eyebrow">YOUR MOOD MATCHES</div>
+          <h2>Watch one of these tonight.</h2>
+        </div>
+        <button class="ghost" id="restartBtn">Start over</button>
+      </div>
+      <div class="cards" id="resultsGrid"></div>
+      <div class="method">
+        <strong>How AniMood works</strong>
+        <p>Results are based on hand-tuned experience tags such as emotional weight, payoff, mystery, pace and atmosphere. Match percentages are recommendation-fit scores, not review scores.</p>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="eyebrow">WHY ANIMOOD</div>
+      <h2>Genre is only the beginning.</h2>
+      <div class="why-grid">
+        <article><span>01</span><h3>Mood first</h3><p>Sometimes you want a mind-bender. Sometimes you just want to laugh.</p></article>
+        <article><span>02</span><h3>Human signals</h3><p>We care about things databases usually miss: payoff, emotional weight, tension and “how hard it is to stop watching.”</p></article>
+        <article><span>03</span><h3>Less choice</h3><p>AniMood is designed to narrow things down, not give you another list of 100 anime.</p></article>
+      </div>
+    </section>
+
+    <footer>Prototype v0.2 · AniMood</footer>
+  </main>
+  <script src="assets/app.js"></script>
+</body>
+</html>
