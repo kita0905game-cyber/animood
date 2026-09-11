@@ -16,7 +16,10 @@ test('unexpected fields and contact information fail privacy checks',()=>{
  assert.throws(()=>validatePublic([{...normalize([row()])[0],userReview:'leak'}]));
  assert.throws(()=>validatePublic(normalize([row({'English Title':'contact@example.com'})])));
 });
-test('missing title fails rather than silently dropping catalog',()=>assert.throws(()=>normalize([row({'English Title':null})])));
+test('incomplete editorial backlog entries stay out of the public catalog',()=>{
+ assert.deepEqual(normalize([row({'English Title':null})]),[]);
+ assert.deepEqual(normalize([row({'General Tags':[]})]),[]);
+});
 test('stable data does not change timestamps or files',async()=>{
  const dir=await fs.mkdtemp(path.join(os.tmpdir(),'animood-test-'));const out=path.join(dir,'anime.json');
  try{const rows=normalize([row()]);await writePublic(rows,out);const first=await fs.readFile(out,'utf8');assert.equal(await writePublic(rows,out),false);assert.equal(await fs.readFile(out,'utf8'),first);}finally{await fs.rm(dir,{recursive:true});}
