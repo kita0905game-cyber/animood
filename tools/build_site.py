@@ -52,7 +52,7 @@ def main():
     }
     for slug, (title, description, section) in pages.items():
         html = source.replace('AniMood — What should I watch tonight?', title)
-        html = html.replace('Choose an anime by the mood and story experience you want. Explore a 368-title catalog with clear reasons and content notes.', description)
+        html = html.replace('Choose an anime by the mood and story experience you want. Explore a growing catalog with clear reasons and content notes.', description)
         html = html.replace('href="https://animood.pages.dev/"', f'href="https://animood.pages.dev/{slug}/"').replace('<footer>', section+'<footer>')
         dest = out/slug/'index.html'
         dest.parent.mkdir(exist_ok=True)
