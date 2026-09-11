@@ -12,17 +12,21 @@ const date = v => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}/.test(v) ? v.slic
 
 export function normalize(records) {
  const seen = new Set();
- return records.map(r=>{
+ const publicRows=[];
+ for(const r of records){
   if (!r.id || seen.has(r.id)) throw Error('Missing or duplicate source ID');
   seen.add(r.id);
   const f=r.fields||{}, title=text(f['English Title']);
   const tags=Array.isArray(f['General Tags']) ? [...new Set(f['General Tags'].map(name).filter(Boolean))].sort() : [];
-  if(!title||!tags.length) throw Error('Source row lacks public title or tags; preserve previous output and review');
+  // Airtable contains the wider editorial backlog. Only entries with both
+  // public requirements belong in the derived website catalog.
+  if(!title||!tags.length) continue;
   const editorsTake=name(f['Evaluation Status'])==='評価済み' && f['Public Ready']===true ? text(f["Editor's Take"]) : null;
-  return {id:r.id,title,titleJa:text(f.Title),generalTags:tags,mediaType:name(f['Media Type']),
+  publicRows.push({id:r.id,title,titleJa:text(f.Title),generalTags:tags,mediaType:name(f['Media Type']),
    episodes:integer(f.Episodes),releaseYear:integer(f['Release Year']),airingStatus:name(f['Airing Status']),
-   editorsTake,sources:{tags:'Editorial seed',tagsUpdated:date(f['General Tags Updated']),metadataUpdated:date(f['Metadata Updated'])}};
- }).sort((a,b)=>a.title.localeCompare(b.title,'en')||a.id.localeCompare(b.id));
+   editorsTake,sources:{tags:'Editorial seed',tagsUpdated:date(f['General Tags Updated']),metadataUpdated:date(f['Metadata Updated'])}});
+ }
+ return publicRows.sort((a,b)=>a.title.localeCompare(b.title,'en')||a.id.localeCompare(b.id));
 }
 
 export function validatePublic(rows) {
