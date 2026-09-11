@@ -6,7 +6,7 @@ Run python tools/check_rules.py before work. Fetch failure or changed rule hashe
 ## Data refresh
 Use Airtable connectors to read the public field allowlist, all pages. Normalize IDs to names in a private snapshot: {complete:true,totalRecordCount,records:[{id,fields}]}.
 Run node scripts/export-airtable.mjs --snapshot .local/current.json.
-The same exporter uses REST with AIRTABLE_PAT in GitHub Actions. Errors preserve existing data. Identical records preserve generatedAt. Unexpected catalog shrinkage requires review.
+The same exporter uses REST with AIRTABLE_PAT in GitHub Actions. Only rows with both English Title and General Tags are exported; incomplete backlog rows stay in Airtable. Errors preserve existing data. Identical records preserve generatedAt. Unexpected catalog shrinkage requires review.
 
 ## Activate remote sync
 1. Register AIRTABLE_PAT in repository Actions secrets with read-only AniMood access.

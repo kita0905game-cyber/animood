@@ -1,13 +1,135 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AniMood — What should I watch tonight?</title><meta name="description" content="Choose an anime by the mood and story experience you want. Explore a 368-title catalog with clear reasons and content notes."><link rel="canonical" href="https://animood.pages.dev/"><link rel="stylesheet" href="/assets/style.css"></head>
-<body><main><header class="nav"><a class="brand" href="/">AniMood<span>THE NEXT WATCH</span></a><nav class="languages" aria-label="Language"><button data-lang="en">EN</button><button data-lang="ja">日本語</button></nav></header>
-<section class="hero"><p class="eyebrow" data-i="eyebrow">A BETTER WAY TO PICK YOUR NEXT ANIME</p><h1 data-i="headline">A mood. A reason.<br>Your next watch.</h1><p class="sub" data-i="intro">Start with how you want to feel, or what you loved about a story. We’ll explain the fit.</p><p class="catalog" id="catalog" role="status">Loading the catalog…</p></section>
-<nav class="routes" aria-label="Discovery route"><button data-mode="mood" data-i="modeMood">Tonight’s mood</button><button data-mode="taste" data-i="modeTaste">My taste</button><button data-mode="like" data-i="modeLike">More like a favorite</button></nav>
-<section id="picker" class="picker" aria-label="Find your next anime"><div id="moodPanel"><p class="eyebrow" data-i="moodLabel">01 / CHOOSE UP TO TWO MOODS</p><div id="moods" class="chips"></div></div>
-<div id="tastePanel" hidden><p class="eyebrow" data-i="tasteLabel">WHAT KEEPS YOU WATCHING? PICK UP TO THREE.</p><p data-i="tasteHelp" class="hint">Your choices stay on this device. No account needed.</p><div id="tastes" class="chips"></div><button class="text-button" id="clearTaste" data-i="clearTaste">Clear saved taste</button></div>
-<div id="likePanel" hidden><label for="favorite" data-i="favoriteLabel">Start with a story you loved</label><select id="favorite"></select><p class="like-question" id="likeQuestion"></p><div id="reasons" class="chips"></div></div>
-<details id="preferences"><summary data-i="preferences">Fine-tune tonight</summary><div class="control-grid"><div><label for="pace" data-i="pace">Pacing</label><select id="pace"><option value="any" data-i="paceAny">Any pace</option><option value="fast" data-i="paceFast">Keep it moving</option><option value="slow" data-i="paceSlow">Let it build</option></select></div><label class="check"><input type="checkbox" id="shortOnly"><span data-i="shortOnly">Up to 12 episodes (known lengths only)</span></label></div><p class="eyebrow" data-i="avoid">LEAVE THESE OUT</p><div id="filters" class="chips"></div><p class="hint" data-i="filterHint">Filters use recorded tags. Missing flags don’t guarantee content is absent. Finished-only checks require known status.</p></details>
-<button id="go" class="cta" disabled data-i="go">Find my next watch <span>↗</span></button><p id="message" role="status" class="hint"></p></section>
-<section id="results" hidden><div class="sectionHead"><p class="eyebrow" data-i="yourPicks">YOUR NEXT WATCH</p><h2 data-i="resultsTitle">Three stories. Different reasons.</h2><p class="hint" data-i="matchHelp">AniMood Match reflects tag evidence, not a review score or a probability.</p></div><div id="cards"></div><button id="share" class="text-button" data-i="share">Copy this discovery link</button><p id="shareStatus" role="status"></p></section>
-<section id="guide" class="guide"><p class="eyebrow" data-i="guideLabel">A LITTLE LESS SCROLLING</p><h2 data-i="guideTitle">Choose the experience, not the shelf.</h2><p data-i="guideText">A time-travel setting can hide a puzzle, an emotional drama, or a frantic thriller. The reason you love a story is more useful than its genre alone.</p><div class="guide-links"><a href="/anime-like-steins-gate/">Anime like Steins;Gate →</a><a href="/anime-recommendation-quiz/">How the anime mood quiz works →</a></div></section>
-<footer><span>AniMood · <span data-i="footer">Independent, text-first anime discovery.</span></span><p data-i="privacy">Taste and feedback are stored on this device. No account or external tracking is required.</p></footer></main><script src="/assets/engine.js"></script><script src="/assets/app.js"></script></body></html>
+<html lang="en">
+  <!--
+    編集ガイド
+    ・このファイル：ページの構造
+    ・assets/style.css：色・文字サイズ・配置
+    ・assets/app.js：英語／日本語の表示文言と画面の操作
+    ・data-i がある要素の文言は、JavaScriptで言語別の文言に置き換わります。
+    ・id、class、data-* は動作や見た目に使うため、変更時は対応するコードも確認します。
+    ・PC側で保存するとローカルプレビューが自動更新されます。
+  -->
+
+  <!-- ページの基本設定：タブのタイトル・検索向け説明・CSSの読み込み -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AniMood — What should I watch tonight?</title>
+    <meta name="description" content="Choose an anime by the mood and story experience you want. Explore a growing catalog with clear reasons and content notes.">
+    <link rel="canonical" href="https://animood.pages.dev/">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+  <body>
+    <main>
+
+      <!-- ページ上部：サイト名と言語切り替え -->
+      <header class="nav">
+        <a class="brand" href="/">AniMood<span>THE NEXT WATCH</span></a>
+        <nav class="languages" aria-label="Language">
+          <button data-lang="en">EN</button>
+          <button data-lang="ja">日本語</button>
+        </nav>
+      </header>
+
+      <!-- メイン見出しと紹介文 -->
+      <section class="hero">
+        <p class="eyebrow" data-i="eyebrow">A BETTER WAY TO PICK YOUR NEXT ANIME</p>
+        <h1 data-i="headline">A mood. A reason.<br>Your next watch.</h1>
+        <p class="sub" data-i="intro">Start with how you want to feel, or what you loved about a story. We’ll explain the fit.</p>
+        <p class="catalog" id="catalog" role="status">Loading the catalog…</p>
+      </section>
+
+      <!-- 探し方の切り替え：今の気分／好み／好きな作品 -->
+      <nav class="routes" aria-label="Discovery route">
+        <button data-mode="mood" data-i="modeMood">Tonight’s mood</button>
+        <button data-mode="taste" data-i="modeTaste">My taste</button>
+        <button data-mode="like" data-i="modeLike">More like a favorite</button>
+      </nav>
+
+      <!-- 診断の入力エリア -->
+      <section id="picker" class="picker" aria-label="Find your next anime">
+
+        <!-- 今の気分から探す（選択ボタンはJavaScriptで生成） -->
+        <div id="moodPanel">
+          <p class="eyebrow" data-i="moodLabel">01 / CHOOSE UP TO TWO MOODS</p>
+          <div id="moods" class="chips"></div>
+        </div>
+
+        <!-- 好みから探す -->
+        <div id="tastePanel" hidden>
+          <p class="eyebrow" data-i="tasteLabel">WHAT KEEPS YOU WATCHING? PICK UP TO THREE.</p>
+          <p data-i="tasteHelp" class="hint">Your choices stay on this device. No account needed.</p>
+          <div id="tastes" class="chips"></div>
+          <button class="text-button" id="clearTaste" data-i="clearTaste">Clear saved taste</button>
+        </div>
+
+        <!-- 好きな作品から探す -->
+        <div id="likePanel" hidden>
+          <label for="favorite" data-i="favoriteLabel">Start with a story you loved</label>
+          <select id="favorite"></select>
+          <p class="like-question" id="likeQuestion"></p>
+          <div id="reasons" class="chips"></div>
+        </div>
+
+        <!-- 追加条件：テンポ・話数・避けたい要素 -->
+        <details id="preferences">
+          <summary data-i="preferences">Fine-tune tonight</summary>
+          <div class="control-grid">
+            <div>
+              <label for="pace" data-i="pace">Pacing</label>
+              <select id="pace">
+                <option value="any" data-i="paceAny">Any pace</option>
+                <option value="fast" data-i="paceFast">Keep it moving</option>
+                <option value="slow" data-i="paceSlow">Let it build</option>
+              </select>
+            </div>
+            <label class="check">
+              <input type="checkbox" id="shortOnly">
+              <span data-i="shortOnly">Up to 12 episodes (known lengths only)</span>
+            </label>
+          </div>
+          <p class="eyebrow" data-i="avoid">LEAVE THESE OUT</p>
+          <div id="filters" class="chips"></div>
+          <p class="hint" data-i="filterHint">Filters use recorded tags. Missing flags don’t guarantee content is absent. Finished-only checks require known status.</p>
+        </details>
+
+        <!-- 診断を実行するボタンと案内メッセージ -->
+        <button id="go" class="cta" disabled data-i="go">Find my next watch <span>↗</span></button>
+        <p id="message" role="status" class="hint"></p>
+      </section>
+
+      <!-- 推薦結果（作品カードはJavaScriptで生成） -->
+      <section id="results" hidden>
+        <div class="sectionHead">
+          <p class="eyebrow" data-i="yourPicks">YOUR NEXT WATCH</p>
+          <h2 data-i="resultsTitle">Three stories. Different reasons.</h2>
+          <p class="hint" data-i="matchHelp">AniMood Match reflects tag evidence, not a review score or a probability.</p>
+        </div>
+        <div id="cards"></div>
+        <button id="share" class="text-button" data-i="share">Copy this discovery link</button>
+        <p id="shareStatus" role="status"></p>
+      </section>
+
+      <!-- サービスの説明と関連ページへのリンク -->
+      <section id="guide" class="guide">
+        <p class="eyebrow" data-i="guideLabel">A LITTLE LESS SCROLLING</p>
+        <h2 data-i="guideTitle">Choose the experience, not the shelf.</h2>
+        <p data-i="guideText">A time-travel setting can hide a puzzle, an emotional drama, or a frantic thriller. The reason you love a story is more useful than its genre alone.</p>
+        <div class="guide-links">
+          <a href="/anime-like-steins-gate/">Anime like Steins;Gate →</a>
+          <a href="/anime-recommendation-quiz/">How the anime mood quiz works →</a>
+        </div>
+      </section>
+
+      <!-- ページ下部：サービス紹介とプライバシーの説明 -->
+      <footer>
+        <span>AniMood · <span data-i="footer">Independent, text-first anime discovery.</span></span>
+        <p data-i="privacy">Taste and feedback are stored on this device. No account or external tracking is required.</p>
+      </footer>
+    </main>
+
+    <!-- JavaScriptの読み込み：推薦ロジック → 画面の操作 -->
+    <script src="/assets/engine.js"></script>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
