@@ -1,1 +1,454 @@
-:root{--bg:#0c1011;--panel:#151b1d;--line:#303b3e;--text:#edf1e9;--muted:#a3b0ae;--accent:#dbfa7b;--soft:#222d2f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}main{max-width:1120px;margin:auto;padding:24px}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}[hidden]{display:none!important}.nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:8px 0 20px}.brand{font-size:27px;font-weight:850;letter-spacing:-1px}.brand span{display:block;font-size:9px;letter-spacing:2px;color:var(--muted)}.languages{display:flex;gap:6px}.languages button,.text-button{border:0;background:transparent;color:var(--muted);padding:10px}.languages button[aria-pressed=true]{color:var(--accent)}.hero{padding:70px 0 42px;max-width:860px}.eyebrow{font-size:11px;letter-spacing:.16em;color:var(--accent);font-weight:750}.hero h1{font-size:clamp(46px,7.5vw,86px);line-height:1.04;letter-spacing:-.055em;margin:18px 0 24px}.sub{font-size:21px;color:var(--muted);max-width:650px}.catalog{font-size:12px;color:var(--muted)}.routes{display:flex;gap:0;border-bottom:1px solid var(--line)}.routes button{flex:1;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--muted);padding:18px 8px;font-weight:650}.routes button[aria-pressed=true]{border-color:var(--accent);color:var(--text)}.picker{padding:32px 0 50px}.chips{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0 28px}.chip{background:transparent;border:1px solid var(--line);color:var(--text);padding:12px 17px;border-radius:5px}.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--bg)}.cta{margin-top:22px;background:var(--accent);color:var(--bg);border:0;border-radius:5px;padding:17px 24px;font-weight:800;min-width:230px}.cta span{padding-left:20px}label{display:block;color:var(--muted);font-size:14px}select{margin:10px 0;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:4px;padding:13px;width:100%;max-width:540px}.like-question{font-size:23px}.hint{font-size:13px;color:var(--muted);max-width:720px}summary{cursor:pointer;color:var(--muted);padding:14px 0}.control-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:25px}.check{display:flex;gap:10px}input[type=checkbox]{accent-color:var(--accent)}#results{border-top:1px solid var(--line);padding:42px 0}.sectionHead h2,.guide h2{font-size:clamp(27px,4vw,40px);letter-spacing:-.035em;margin:12px 0}.result-row{border-top:1px solid var(--line);padding:32px 0;display:grid;grid-template-columns:75px 1fr;gap:22px}.rank{font-size:44px;color:#6f817e;font-weight:750}.titleRow{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}.titleRow h3{font-size:29px;letter-spacing:-.035em;margin:0}.match{color:var(--accent);font-size:12px;white-space:nowrap}.metadata{color:var(--muted);font-size:12px}.tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}.tag{font-size:11px;color:#b9c6c2;border:1px solid var(--line);padding:5px 8px;border-radius:3px}.explanation{display:grid;grid-template-columns:1.1fr 1fr;gap:26px}.explanation h4,.fingerprint h4{font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin:16px 0 10px}.explanation p{margin:0;line-height:1.65}.fingerprint{margin:20px 0}.finger-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:9px}.bar{height:40px;background:var(--soft);display:flex;align-items:flex-end}.bar i{display:block;width:100%;background:var(--accent);opacity:.7}.trait{font-size:10px;color:var(--muted);margin-top:5px;overflow-wrap:anywhere}.editor{border-left:2px solid var(--accent);padding:2px 18px;margin:22px 0}.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.actions button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:9px 12px;font-size:12px;border-radius:4px}.actions button[aria-pressed=true]{color:var(--accent);border-color:var(--accent)}.actions a{font-size:12px;text-decoration:underline;text-underline-offset:4px}.guide{padding:45px 0;border-top:1px solid var(--line);max-width:900px}.guide p{color:var(--muted);max-width:720px}.guide-links{display:flex;gap:26px;flex-wrap:wrap;font-size:13px;color:var(--accent);margin-top:25px}footer{border-top:1px solid var(--line);padding:30px 0 45px;font-size:12px;color:var(--muted)}html[lang=ja] .hero h1{line-height:1.3;font-size:clamp(38px,6vw,68px);letter-spacing:-.03em}.seo-content{max-width:760px}.seo-content li{margin:12px 0}@media(max-width:700px){main{padding:18px}.hero{padding:48px 0 25px}.hero h1{font-size:52px}.sub{font-size:17px}.routes button{font-size:12px;padding:15px 6px}.result-row{grid-template-columns:1fr;gap:8px}.rank{font-size:24px}.explanation,.control-grid{grid-template-columns:1fr;gap:6px}.finger-grid{grid-template-columns:repeat(3,1fr)}.chip{font-size:14px;padding:10px 12px}.titleRow h3{font-size:25px}.cta{width:100%}.result-row,.guide{overflow-wrap:anywhere}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+/* 01 共通色：bg 背景 / panel 面 / line 境界線 / text 本文 / muted 補助文字 / accent 強調色。ルールの順序は維持する */
+:root {
+  --bg: #0c1011;
+  --panel: #151b1d;
+  --line: #303b3e;
+  --text: #edf1e9;
+  --muted: #a3b0ae;
+  --accent: #dbfa7b;
+  --soft: #222d2f;
+}
+/* 02 全体の基本設定とキーボード操作時の目印 */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+}
+main {
+  max-width: 1120px;
+  margin: auto;
+  padding: 24px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+[hidden] {
+  display: none !important;
+}
+/* 03 ページ上部：ブランド名と言語ボタン */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding: 8px 0 20px;
+}
+.brand {
+  font-size: 27px;
+  font-weight: 850;
+  letter-spacing: -1px;
+}
+.brand span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+.languages {
+  display: flex;
+  gap: 6px;
+}
+.languages button,
+.text-button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  padding: 10px;
+}
+.languages button[aria-pressed="true"] {
+  color: var(--accent);
+}
+/* 04 メイン見出しと紹介文。日本語・スマホの指定は下にもある */
+.hero {
+  padding: 70px 0 42px;
+  max-width: 860px;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  font-weight: 750;
+}
+.hero h1 {
+  font-size: clamp(46px, 7.5vw, 86px);
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+  margin: 18px 0 24px;
+}
+.sub {
+  font-size: 21px;
+  color: var(--muted);
+  max-width: 650px;
+}
+.catalog {
+  font-size: 12px;
+  color: var(--muted);
+}
+/* 05 探し方のタブ */
+.routes {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--line);
+}
+.routes button {
+  flex: 1;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  padding: 18px 8px;
+  font-weight: 650;
+}
+.routes button[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--text);
+}
+/* 06 選択エリアと診断ボタン */
+.picker {
+  padding: 32px 0 50px;
+}
+.chips {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin: 20px 0 28px;
+}
+.chip {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 12px 17px;
+  border-radius: 5px;
+}
+.chip[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+.cta {
+  margin-top: 22px;
+  background: var(--accent);
+  color: var(--bg);
+  border: 0;
+  border-radius: 5px;
+  padding: 17px 24px;
+  font-weight: 800;
+  min-width: 230px;
+}
+.cta span {
+  padding-left: 20px;
+}
+/* 07 入力欄・追加条件・補助文 */
+label {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+}
+select,
+input[type="search"] {
+  margin: 10px 0;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 13px;
+  width: 100%;
+  max-width: 540px;
+}
+.favorite-matches {
+  display: grid;
+  gap: 6px;
+  max-width: 540px;
+  margin: 0 0 14px;
+}
+.favorite-match {
+  width: 100%;
+  padding: 10px 13px;
+  text-align: left;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.favorite-match:hover,
+.favorite-match:focus-visible,
+.favorite-match.is-selected {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--panel));
+}
+.like-question {
+  font-size: 23px;
+}
+.hint {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 720px;
+}
+summary {
+  cursor: pointer;
+  color: var(--muted);
+  padding: 14px 0;
+}
+.control-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 25px;
+}
+.check {
+  display: flex;
+  gap: 10px;
+}
+input[type="checkbox"] {
+  accent-color: var(--accent);
+}
+/* 08 推薦結果：番号・作品名・タグ・説明 */
+#results {
+  border-top: 1px solid var(--line);
+  padding: 42px 0;
+}
+.sectionHead h2,
+.guide h2 {
+  font-size: clamp(27px, 4vw, 40px);
+  letter-spacing: -0.035em;
+  margin: 12px 0;
+}
+.result-row {
+  border-top: 1px solid var(--line);
+  padding: 32px 0;
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  gap: 22px;
+}
+.rank {
+  font-size: 44px;
+  color: #6f817e;
+  font-weight: 750;
+}
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.titleRow h3 {
+  font-size: 29px;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+.match {
+  color: var(--accent);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.metadata {
+  color: var(--muted);
+  font-size: 12px;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 16px 0;
+}
+.tag {
+  font-size: 11px;
+  color: #b9c6c2;
+  border: 1px solid var(--line);
+  padding: 5px 8px;
+  border-radius: 3px;
+}
+.explanation {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 26px;
+}
+.explanation h4,
+.fingerprint h4 {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 16px 0 10px;
+}
+.explanation p {
+  margin: 0;
+  line-height: 1.65;
+}
+/* 09 特徴グラフ。好みの軸を増やす場合は列数も確認 */
+.fingerprint {
+  margin: 20px 0;
+}
+.finger-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 9px;
+}
+.bar {
+  height: 40px;
+  background: var(--soft);
+  display: flex;
+  align-items: flex-end;
+}
+.bar i {
+  display: block;
+  width: 100%;
+  background: var(--accent);
+  opacity: 0.7;
+}
+.trait {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 5px;
+  overflow-wrap: anywhere;
+}
+/* 10 管理人の見解と結果の操作ボタン */
+.editor {
+  border-left: 2px solid var(--accent);
+  padding: 2px 18px;
+  margin: 22px 0;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.actions button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 9px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.actions button[aria-pressed="true"] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.actions a {
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+/* 11 サービスの説明とページ下部 */
+.guide {
+  padding: 45px 0;
+  border-top: 1px solid var(--line);
+  max-width: 900px;
+}
+.guide p {
+  color: var(--muted);
+  max-width: 720px;
+}
+.guide-links {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--accent);
+  margin-top: 25px;
+}
+footer {
+  border-top: 1px solid var(--line);
+  padding: 30px 0 45px;
+  font-size: 12px;
+  color: var(--muted);
+}
+/* 12 日本語の大見出し。英語用指定より優先される */
+html[lang="ja"] .hero h1 {
+  line-height: 1.3;
+  font-size: clamp(38px, 6vw, 68px);
+  letter-spacing: -0.03em;
+}
+/* 13 案内ページの本文 */
+.seo-content {
+  max-width: 760px;
+}
+.seo-content li {
+  margin: 12px 0;
+}
+/* 14 幅700px以下の画面用。スマホだけの調整はこの中 */
+@media (max-width: 700px) {
+  main {
+    padding: 18px;
+  }
+  .hero {
+    padding: 48px 0 25px;
+  }
+  .hero h1 {
+    font-size: 52px;
+  }
+  .sub {
+    font-size: 17px;
+  }
+  .routes button {
+    font-size: 12px;
+    padding: 15px 6px;
+  }
+  .result-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .rank {
+    font-size: 24px;
+  }
+  .explanation,
+  .control-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .finger-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .chip {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  .titleRow h3 {
+    font-size: 25px;
+  }
+  .cta {
+    width: 100%;
+  }
+  .result-row,
+  .guide {
+    overflow-wrap: anywhere;
+  }
+}
+/* 15 動きを抑える端末設定への対応 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}

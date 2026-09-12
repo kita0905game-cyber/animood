@@ -21,4 +21,4 @@ Only public assets/data and generated SEO pages, sitemap and robots.txt ship. Pr
 Check desktop/mobile, English/Japanese, three routes, exclusions, no-match states and editor-note gating.
 
 ## Analytics
-track() records local event counters and emits animood:track. No off-device funnel aggregation is active. Connect a destination only after configuring and disclosing it. Never send free-form or personal data in events.
+track() records local event counters and emits animood:track. GA4 is configured with measurement ID `G-VMBE5RM50C`. It receives only the event name, `screen_type` (`home` or `seo_page`), and a numeric result count when applicable. Never send free-form input, account data, anime titles, public IDs, selected answers, or query-string data. The standard GA4 automatic page view is disabled; AniMood sends a page view with the query string removed.

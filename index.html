@@ -17,6 +17,17 @@
     <title>AniMood — What should I watch tonight?</title>
     <meta name="description" content="Choose an anime by the mood and story experience you want. Explore a growing catalog with clear reasons and content notes.">
     <link rel="canonical" href="https://animood.pages.dev/">
+
+    <!-- Google Analytics：作品名・検索文字・共有URLの条件は送らない設定 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VMBE5RM50C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      // page_view は assets/app.js 側で、URLの「?以降」を除いて送る。
+      gtag("config", "G-VMBE5RM50C", { send_page_view: false });
+    </script>
+
     <link rel="stylesheet" href="/assets/style.css">
   </head>
   <body>
@@ -39,11 +50,12 @@
         <p class="catalog" id="catalog" role="status">Loading the catalog…</p>
       </section>
 
-      <!-- 探し方の切り替え：今の気分／好み／好きな作品 -->
+      <!-- 探し方の切り替え：今の気分／いつもの好み／好きな作品から／好きなタグから -->
       <nav class="routes" aria-label="Discovery route">
-        <button data-mode="mood" data-i="modeMood">Tonight’s mood</button>
-        <button data-mode="taste" data-i="modeTaste">My taste</button>
-        <button data-mode="like" data-i="modeLike">More like a favorite</button>
+        <button data-mode="mood" data-i="modeMood">Tonight’s mood</button><!--今の気分-->
+        <button data-mode="taste" data-i="modeTaste">My taste</button><!--いつもの好み-->
+        <button data-mode="like" data-i="modeLike">More like a favorite</button><!--好きな作品から-->
+        <button data-mode="tags" data-i="modetags">Pick favorite tags</button><!--好きなタグから-->
       </nav>
 
       <!-- 診断の入力エリア -->
@@ -55,7 +67,7 @@
           <div id="moods" class="chips"></div>
         </div>
 
-        <!-- 好みから探す -->
+        <!-- いつもの好みから探す -->
         <div id="tastePanel" hidden>
           <p class="eyebrow" data-i="tasteLabel">WHAT KEEPS YOU WATCHING? PICK UP TO THREE.</p>
           <p data-i="tasteHelp" class="hint">Your choices stay on this device. No account needed.</p>
@@ -66,10 +78,20 @@
         <!-- 好きな作品から探す -->
         <div id="likePanel" hidden>
           <label for="favorite" data-i="favoriteLabel">Start with a story you loved</label>
-          <select id="favorite"></select>
+          <input id="favorite" type="search" autocomplete="off" spellcheck="false">
+          <p class="hint" id="favoriteHelp" data-i="favoriteHelp">Type a title to narrow the choices.</p>
+          <div id="favoriteMatches" class="favorite-matches" role="listbox" aria-label="Anime title matches"></div>
           <p class="like-question" id="likeQuestion"></p>
           <div id="reasons" class="chips"></div>
         </div>
+
+        <!--好きなタグから探す-->
+        <div id="tagPanel" hidden>
+         <p class="eyebrow" data-i="tagLabel">PICK UP TO THREE TAGS</p>
+         <p class="hint" data-i="tagHelp">Choose what you want to experience.</p>
+         <div id="tagChoices" class="chips"></div>
+        </div>
+
 
         <!-- 追加条件：テンポ・話数・避けたい要素 -->
         <details id="preferences">
@@ -124,7 +146,7 @@
       <!-- ページ下部：サービス紹介とプライバシーの説明 -->
       <footer>
         <span>AniMood · <span data-i="footer">Independent, text-first anime discovery.</span></span>
-        <p data-i="privacy">Taste and feedback are stored on this device. No account or external tracking is required.</p>
+        <p data-i="privacy">Taste and feedback stay on this device. Google Analytics measures visits and feature use; it does not receive account data, search text, or anime titles.</p>
       </footer>
     </main>
 

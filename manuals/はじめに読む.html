@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AniMood 編集マニュアル — はじめに読む</title>
+  <style>
+    :root { --ink:#1c2430; --muted:#5e6a78; --paper:#fffdf8; --line:#d8dfdf; --accent:#1b796b; --soft:#e6f5ef; --warn:#fff2cb; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:#eff4f2; font-family:"Yu Gothic UI","Meiryo",system-ui,sans-serif; line-height:1.75; }
+    main { max-width:980px; margin:auto; padding:28px 18px 64px; }
+    .hero { padding:32px; color:white; background:linear-gradient(135deg,#123b3d,#207763); border-radius:20px; }
+    .hero p { max-width:640px; margin:8px 0 0; color:#e4faf3; }
+    h1 { margin:0; font-size:clamp(28px,6vw,45px); line-height:1.25; }
+    h2 { margin:38px 0 12px; font-size:25px; }
+    h3 { margin:0 0 5px; font-size:18px; }
+    .eyebrow { margin:0 0 8px; color:#aaf0d7; font-weight:700; letter-spacing:.08em; font-size:13px; }
+    .notice { margin:22px 0; padding:16px 18px; background:var(--warn); border-left:6px solid #cd9416; border-radius:10px; }
+    .flow { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:16px 0; }
+    .step { position:relative; padding:14px; background:var(--paper); border:1px solid var(--line); border-radius:12px; font-weight:700; text-align:center; }
+    .step:not(:last-child)::after { content:"→"; position:absolute; right:-17px; color:var(--accent); font-size:22px; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; }
+    .card { display:block; min-height:150px; padding:19px; color:inherit; text-decoration:none; background:var(--paper); border:1px solid var(--line); border-radius:14px; box-shadow:0 2px 9px #1643390d; }
+    .card:hover,.card:focus-visible { border-color:var(--accent); outline:3px solid #5cc9b333; outline-offset:2px; }
+    .card p { margin:0; color:var(--muted); font-size:14px; }
+    .num { display:inline-grid; place-items:center; width:28px; height:28px; margin-bottom:9px; color:white; background:var(--accent); border-radius:50%; font-weight:800; }
+    .done { margin:0; padding-left:20px; }
+    code { padding:2px 5px; background:#e6eceb; border-radius:4px; font-family:Consolas,monospace; }
+    details { margin:12px 0; padding:14px 16px; background:var(--paper); border:1px solid var(--line); border-radius:10px; }
+    summary { cursor:pointer; font-weight:700; }
+    .small { color:var(--muted); font-size:14px; }
+    @media (max-width:680px) { .hero { padding:24px; } .flow { grid-template-columns:1fr 1fr; } .step:nth-child(2)::after { content:""; } .step:nth-child(1)::after,.step:nth-child(3)::after { right:-16px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">ANIMOOD · PC編集用</p>
+      <h1>まずは、ここだけ読めば大丈夫。</h1>
+      <p>この画面は、初めてAniMoodを編集する人のための入口です。やりたいことを1つ選び、対応する手順書を開いてください。</p>
+    </section>
+
+    <div class="notice"><strong>公開サイトとプレビューは別です。</strong><br>公開サイトは <code>animood.pages.dev</code>。PCで試すページは <code>127.0.0.1:8767</code> で、PowerShellでプレビューを起動している間だけ開けます。</div>
+
+    <h2>編集から公開までの流れ</h2>
+    <div class="flow" aria-label="編集の流れ"><div class="step">1. PCで編集</div><div class="step">2. プレビュー確認</div><div class="step">3. GitHubへ保存</div><div class="step">4. 公開サイト確認</div></div>
+    <p class="small">PCで保存しただけでは公開されません。最初は「公開」まで進めず、プレビューで色や文章を変える練習だけで十分です。</p>
+
+    <h2>初めての人はこの順番</h2>
+    <div class="cards">
+      <a class="card" href="15_最初の練習を一緒に進める.md"><span class="num">1</span><h3>色を変えて、元に戻す</h3><p>一番安全な練習です。編集・保存・プレビューの流れを体験します。</p></a>
+      <a class="card" href="02_編集とプレビュー.md"><span class="num">2</span><h3>プレビューを開く</h3><p>PCで変更を試すページの起動と、開けないときの直し方です。</p></a>
+      <a class="card" href="12_確認と公開.md"><span class="num">3</span><h3>公開する前に確認する</h3><p>GitHubへの保存と、公開サイトへ反映されたかの見方です。</p></a>
+    </div>
+
+    <h2>今日は何をしたい？</h2>
+    <div class="cards">
+      <a class="card" href="03_文章と言語.md"><h3>文章・日本語を変えたい</h3><p>見出し、説明、英語と日本語の対応を直す。</p></a>
+      <a class="card" href="04_見た目.md"><h3>色・文字・余白を変えたい</h3><p>スマホ表示も含めて、CSSで見た目を調整する。</p></a>
+      <a class="card" href="05_ページの部品を追加.md"><h3>ボタンや説明を増やしたい</h3><p>HTMLに部品を足し、必要な翻訳も用意する。</p></a>
+      <a class="card" href="06_気分を追加.md"><h3>気分・条件を増やしたい</h3><p>選択肢と推薦設定を同じ名前で追加する。</p></a>
+      <a class="card" href="08_好みと理由を追加.md"><h3>好みや「好きな理由」を増やしたい</h3><p>候補から選ぶ理由とタグのつながりを追加する。</p></a>
+      <a class="card" href="18_好きなタグから探す.md"><h3>好きなタグから探す方法を足したい</h3><p>6個のタグから始める、練習付きの追加手順。</p></a>
+      <a class="card" href="10_作品データ.md"><h3>作品を追加・修正したい</h3><p>作品データの原本であるAirtableの扱いを確認する。</p></a>
+      <a class="card" href="13_困ったとき.md"><h3>壊れた・開けない</h3><p>症状から最初に見る場所を探す。</p></a>
+      <a class="card" href="16_英語と専門用語の辞書.md"><h3>英語が分からない</h3><p>GitHubやコードに出る英語を日本語で確認する。</p></a>
+    </div>
+
+    <h2>編集中の約束</h2>
+    <ul class="done"><li>最初は<strong>1か所だけ</strong>変える。</li><li>保存後に英語・日本語・スマホ幅を確認する。</li><li>分からない英語は推測せず、辞書を開く。</li><li>作品の評価や推薦ルールを変える前は、正式ルールを確認する。</li></ul>
+
+    <h2>すべての手順書</h2>
+    <p class="small">番号順に読む必要はありません。今やりたいことのカードを押してください。</p>
+    <div class="cards">
+      <a class="card" href="00_ここから読む.md"><h3>00｜目次</h3><p>手順書の全体一覧。</p></a>
+      <a class="card" href="01_全体ガイド.md"><h3>01｜全体ガイド</h3><p>PC・GitHub・公開サイトの関係。</p></a>
+      <a class="card" href="02_編集とプレビュー.md"><h3>02｜編集とプレビュー</h3><p>PCで変更を試す方法。</p></a>
+      <a class="card" href="03_文章と言語.md"><h3>03｜文章と言語</h3><p>英語・日本語の表示を直す。</p></a>
+      <a class="card" href="04_見た目.md"><h3>04｜見た目</h3><p>色、文字、余白、スマホ表示。</p></a>
+      <a class="card" href="05_ページの部品を追加.md"><h3>05｜ページの部品を追加</h3><p>説明、リンク、ボタンを足す。</p></a>
+      <a class="card" href="06_気分を追加.md"><h3>06｜気分を追加</h3><p>気分の選択肢を増やす。</p></a>
+      <a class="card" href="07_絞り込みを追加.md"><h3>07｜絞り込みを追加</h3><p>避けたい要素などを増やす。</p></a>
+      <a class="card" href="08_好みと理由を追加.md"><h3>08｜好みと理由を追加</h3><p>好みと「好きな理由」を増やす。</p></a>
+      <a class="card" href="09_推薦を調整.md"><h3>09｜推薦を調整</h3><p>点数や表示件数を調整する。</p></a>
+      <a class="card" href="10_作品データ.md"><h3>10｜作品データ</h3><p>Airtableの作品情報を扱う。</p></a>
+      <a class="card" href="11_別ページを追加.md"><h3>11｜別ページを追加</h3><p>新しいページとリンクを作る。</p></a>
+      <a class="card" href="12_確認と公開.md"><h3>12｜確認と公開</h3><p>テスト、GitHub保存、公開確認。</p></a>
+      <a class="card" href="13_困ったとき.md"><h3>13｜困ったとき</h3><p>壊れた、表示されない時の対処。</p></a>
+      <a class="card" href="14_コードの読み方.md"><h3>14｜コードの読み方</h3><p>記号、括弧、探し方を知る。</p></a>
+      <a class="card" href="15_最初の練習を一緒に進める.md"><h3>15｜最初の練習</h3><p>色を変えて、元に戻す。</p></a>
+      <a class="card" href="16_英語と専門用語の辞書.md"><h3>16｜英語と専門用語</h3><p>英語の意味を日本語で調べる。</p></a>
+      <a class="card" href="17_コピーと確認の手順.md"><h3>17｜コピーと確認</h3><p>コードの貼り方、命令の見方。</p></a>
+      <a class="card" href="18_好きなタグから探す.md"><h3>18｜好きなタグから探す</h3><p>練習付きで検索ルートを追加する。</p></a>
+    </div>
+
+    <details><summary>このページをどう開く？</summary><p>エクスプローラーで <code>manuals</code> フォルダーを開き、<code>はじめに読む.html</code> をダブルクリックします。これはサイト本体ではなく、あなたのPCで読むための案内ページです。</p></details>
+    <details><summary>より詳しい手順書は？</summary><p>このページのカードを押すと、個別のMarkdown手順書が開きます。GitHub上で読むと見出しや表が読みやすく表示されます。すべての一覧は <a href="00_ここから読む.md">00_ここから読む.md</a> にあります。</p></details>
+  </main>
+</body>
+</html>
