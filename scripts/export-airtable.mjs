@@ -44,7 +44,7 @@ export async function fetchAll(token) {
  do {
   const params=new URLSearchParams({pageSize:'100'});
   fields.forEach(f=>params.append('fields[]',f));if(offset)params.set('offset',offset);
-  const url=`https://api.airtable.com/v0/appXkCYzNbv1LDV6O/tblokhzcBwhVIZwTv?${params}`;
+  const url=`https://api.airtable.com/v0/appDJlkkLIblaUGXd/tblokhzcBwhVIZwTv?${params}`;
   let res;
   for(let attempt=0;attempt<4;attempt++){
    res=await fetch(url,{headers:{Authorization:`Bearer ${token}`},signal:AbortSignal.timeout(30000)});
