@@ -38,7 +38,7 @@ Editor's Takeも全件必須ではなく、実視聴・正式評価済み作品�
 
 ## Airtable
 Base: AniMood
-Base ID: appXkCYzNbv1LDV6O
+Base ID: appDJlkkLIblaUGXd
 Table: Anime
 Table ID: tblokhzcBwhVIZwTv
 
