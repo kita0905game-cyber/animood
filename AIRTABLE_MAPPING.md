@@ -1,5 +1,5 @@
 # Airtable mapping
-Base AniMood: appXkCYzNbv1LDV6O. Table Anime: tblokhzcBwhVIZwTv.
+Base AniMood: appDJlkkLIblaUGXd. Table Anime: tblokhzcBwhVIZwTv.
 Resolve current field IDs from the live schema; paginate fully.
 
 Read: Title, English Title, General Tags, Media Type, Episodes, Release Year, Airing Status, Editor's Take, Public Ready, Evaluation Status, General Tags Updated, Metadata Updated.
